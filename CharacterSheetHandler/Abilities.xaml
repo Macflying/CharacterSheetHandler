@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="CharacterSheetHandler.Abilities"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CharacterSheetHandler"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="ListBox" BasedOn="{StaticResource SkillsList}" />
+    </UserControl.Resources>
+    <StackPanel>
+        <TextBlock Style="{StaticResource Title}"
+                   Text="Abilities" />
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="0"
+                 ItemsSource="{Binding}" />
+
+            <ListBox Grid.Column="1"
+                 ItemsSource="{Binding}" />
+
+            <ListBox Grid.Column="2"
+                 ItemsSource="{Binding}" />
+        </Grid>
+    </StackPanel>
+</UserControl>

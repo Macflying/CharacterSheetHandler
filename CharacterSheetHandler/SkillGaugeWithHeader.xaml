@@ -15,9 +15,8 @@
         <Line DockPanel.Dock="Right"
               Style="{StaticResource BlankLine}" />
         <local:SkillGauge DockPanel.Dock="Right"
+                          VerticalAlignment="Bottom"
                           Level="{Binding ElementName=SkillGaugeWithHeaderName, Path=Level}" />
-        <Line Stroke="Black"
-              StrokeThickness="2"
-              Opacity="1" />
+        <Separator VerticalAlignment="Bottom" />
     </DockPanel>
 </UserControl>

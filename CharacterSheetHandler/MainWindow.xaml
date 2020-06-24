@@ -5,9 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterSheetHandler"
         mc:Ignorable="d"
-        Title="Character sheet" Height="450" Width="800">
-    <StackPanel>
-        <local:SheetHeader HorizontalAlignment="Center" />
-        <local:Attributes HorizontalAlignment="Center" />
-    </StackPanel>
+        Title="Character sheet" Height="600" Width="1200">
+    <ScrollViewer VerticalScrollBarVisibility="Disabled"
+                  CanContentScroll="True">
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Center"
+                   Text="20th ANNIVERSARY EDITION"
+                   FontSize="16" />
+            <TextBlock HorizontalAlignment="Center"
+                   Text="VAMPIRE"
+                   FontSize="70"
+                   Margin="-20" />
+            <TextBlock HorizontalAlignment="Center"
+                   Text="THE MASQUERADE"
+                   FontWeight="DemiBold"
+                   FontSize="20" />
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <local:SheetHeader />
+                    <local:Attributes />
+                    <local:Abilities />
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </ScrollViewer>
 </Window>

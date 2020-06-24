@@ -11,21 +11,21 @@
         <Style TargetType="Line" BasedOn="{StaticResource SplitterLine}" />
     </UserControl.Resources>
     <StackPanel>
-        <DockPanel HorizontalAlignment="Center">
+        <DockPanel>
             <Line DockPanel.Dock="Left" />
             <Line DockPanel.Dock="Right" />
             <TextBlock  Text="Attributes" />
         </DockPanel>
-        <Grid Margin="20" HorizontalAlignment="Center">
+        <Grid Margin="20">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200" />
-                <ColumnDefinition Width="200" />
-                <ColumnDefinition Width="200" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="20" />
-                <RowDefinition Height="20" />
-                <RowDefinition Height="20" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
 
             <local:SkillGaugeWithHeader Grid.Column="0" Grid.Row="0"
