@@ -6,43 +6,8 @@
         xmlns:local="clr-namespace:CharacterSheetHandler"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="20">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="200" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
-            <RowDefinition Height="20" />
-            <RowDefinition Height="20" />
-        </Grid.RowDefinitions>
-
-        <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="0"
-                                    Header="Name:" />
-
-        <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="1"
-                                    Header="Player:" />
-
-        <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="2"
-                                    Header="Chronicle:" />
-
-        <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="0"
-                                    Header="Nature:" />
-
-        <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="1"
-                                    Header="Demeanor:" />
-
-        <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="2"
-                                    Header="Concept:" />
-
-        <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="0"
-                                    Header="Clan:" />
-
-        <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="1"
-                                    Header="Generation:" />
-
-        <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="2"
-                                    Header="Sire:" />
-    </Grid>
+    <StackPanel>
+        <local:SheetHeader />
+        <local:Attributes />
+    </StackPanel>
 </Window>
