@@ -4,7 +4,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
-        <!--#region TextBlock-->
+        <!--#region TextBox-->
 
         <!--TextBox-->
         <Style TargetType="TextBox">
@@ -20,23 +20,51 @@
             </Style.Triggers>
         </Style>
 
-        <!--#endregion TextBlock-->
+        <!--#endregion TextBox-->
 
-        <!--#region TextBox-->
+        <!--#region TextBlock-->
 
-        <!--TextBlock-->
-        <Style TargetType="TextBlock">
+        <!--Title-->
+        <Style TargetType="TextBlock" x:Key="Title">
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="32" />
+        </Style>
+
+        <!--EntryHeaderTextBlock-->
+        <Style TargetType="TextBlock" x:Key="EntryHeaderTextBlock">
             <Setter Property="FontSize" Value="16" />
             <Setter Property="TextAlignment" Value="Right" />
         </Style>
 
-        <!--#endregion TextBox-->
+        <!--#endregion TextBlock-->
 
+        <!--#region Line-->
         <!--Blank Line-->
-        <Style TargetType="Line">
+        <Style TargetType="Line" x:Key="BlankLine">
             <Setter Property="Opacity" Value="0" />
             <Setter Property="Width" Value="5" />
             <Setter Property="Height" Value="5" />
         </Style>
+
+        <!--SplitterLine-->
+        <Style TargetType="Line" x:Key="SplitterLine">
+            <Setter Property="Height" Value="5" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        <!--#endregion Line-->
+
+        <!--#region CheckBox-->
+        <!--RoundedCheckBox-->
+        <Style TargetType="CheckBox" x:Key="RoundedCheckBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <RadioButton IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked, Mode=TwoWay}" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion CheckBox-->
     </Application.Resources>
 </Application>

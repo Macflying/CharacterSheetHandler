@@ -7,21 +7,14 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style TargetType="TextBlock" x:Key="Title">
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="FontSize" Value="32" />
-        </Style>
-        <Style TargetType="Line" x:Key="Splitter">
-            <Setter Property="Height" Value="5" />
-            <Setter Property="Width" Value="300" />
-            <Setter Property="Opacity" Value="1" />
-        </Style>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource Title}" />
+        <Style TargetType="Line" BasedOn="{StaticResource SplitterLine}" />
     </UserControl.Resources>
     <StackPanel>
         <DockPanel>
-            <Line DockPanel.Dock="Left" Style="{StaticResource Splitter}" />
-            <Line DockPanel.Dock="Right" Style="{StaticResource Splitter}" />
-            <TextBlock Style="{StaticResource Title}" Text="Attributes" />
+            <Line DockPanel.Dock="Left" />
+            <Line DockPanel.Dock="Right" />
+            <TextBlock  Text="Attributes" />
         </DockPanel>
         <Grid Margin="20">
             <Grid.ColumnDefinitions>
@@ -34,6 +27,7 @@
                 <RowDefinition Height="20" />
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
+            <local:SkillGauge Level="3" />
         </Grid>
     </StackPanel>
 </UserControl>

@@ -55,8 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\BaseValueConverter.cs" />
+    <Compile Include="Converters\NumberToBoolConverter.cs" />
     <Compile Include="SheetHeader.xaml.cs">
       <DependentUpon>SheetHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SkillGauge.xaml.cs">
+      <DependentUpon>SkillGauge.xaml</DependentUpon>
     </Compile>
     <Page Include="Attributes.xaml">
       <SubType>Designer</SubType>
@@ -85,6 +90,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SheetHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SkillGauge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
