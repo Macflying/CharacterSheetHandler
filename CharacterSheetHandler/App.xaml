@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:CharacterSheetHandler"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <!--#region ScrollViewer-->
+        <Style TargetType="ScrollViewer">
+            <Setter Property="CanContentScroll" Value="False" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+        </Style>
+        <!--#endregion ScrollViewer-->
 
         <!--#region ListBox-->
         <Style TargetType="ListBox" x:Key="SkillsList">
@@ -22,10 +29,11 @@
         <!--#region Grid-->
         <Style TargetType="Grid">
             <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="20" />
         </Style>
 
         <Style TargetType="ColumnDefinition">
-            <Setter Property="Width" Value="250" />
+            <Setter Property="Width" Value="200" />
         </Style>
 
         <Style TargetType="RowDefinition">
@@ -62,6 +70,15 @@
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
 
+        <!--SubTitle-->
+        <Style TargetType="TextBlock" x:Key="SubTitle">
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
         <!--EntryHeaderTextBlock-->
         <Style TargetType="TextBlock" x:Key="EntryHeaderTextBlock">
             <Setter Property="FontSize" Value="16" />
@@ -76,14 +93,7 @@
         <Style TargetType="Line" x:Key="BlankLine">
             <Setter Property="Opacity" Value="0" />
             <Setter Property="Width" Value="5" />
-            <Setter Property="Height" Value="5" />
-        </Style>
-
-        <!--SplitterLine-->
-        <Style TargetType="Line" x:Key="SplitterLine">
-            <Setter Property="Height" Value="5" />
-            <Setter Property="Width" Value="300" />
-            <Setter Property="Opacity" Value="1" />
+            <Setter Property="Height" Value="20" />
         </Style>
         <!--#endregion Line-->
 

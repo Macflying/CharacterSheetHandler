@@ -14,9 +14,9 @@
                    Text="{Binding ElementName=SkillGaugeWithHeaderName, Path=Header}" />
         <Line DockPanel.Dock="Right"
               Style="{StaticResource BlankLine}" />
-        <local:SkillGauge DockPanel.Dock="Right"
-                          VerticalAlignment="Bottom"
-                          Level="{Binding ElementName=SkillGaugeWithHeaderName, Path=Level}" />
+        <local:FiveLevelsGauge DockPanel.Dock="Right"
+                               VerticalAlignment="Bottom"
+                               Level="{Binding ElementName=SkillGaugeWithHeaderName, Path=Level}" />
         <Separator VerticalAlignment="Bottom" />
     </DockPanel>
 </UserControl>

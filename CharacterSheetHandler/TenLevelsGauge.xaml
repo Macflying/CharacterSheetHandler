@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="CharacterSheetHandler.TenLevelsGauge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converter="clr-namespace:CharacterSheetHandler.Converters"
+             mc:Ignorable="d"
+             x:Name="TenLevelsGaugeName">
+    <UserControl.Resources>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource RoundedCheckBox}" />
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+        <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=1}" />
+        <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=2}" />
+        <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=3}" />
+        <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=4}" />
+        <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=5}" />
+        <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=6}" />
+        <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=7}" />
+        <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=8}" />
+        <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=9}" />
+        <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=10}" />
+    </StackPanel>
+</UserControl>

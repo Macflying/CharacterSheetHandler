@@ -58,18 +58,37 @@
     <Compile Include="Abilities.xaml.cs">
       <DependentUpon>Abilities.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Advantages.xaml.cs">
+      <DependentUpon>Advantages.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BaseValueConverter.cs" />
     <Compile Include="Converters\NumberToBoolConverter.cs" />
+    <Compile Include="PathGauge.xaml.cs">
+      <DependentUpon>PathGauge.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SheetHeader.xaml.cs">
       <DependentUpon>SheetHeader.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SkillGauge.xaml.cs">
-      <DependentUpon>SkillGauge.xaml</DependentUpon>
+    <Compile Include="FiveLevelsGauge.xaml.cs">
+      <DependentUpon>FiveLevelsGauge.xaml</DependentUpon>
     </Compile>
     <Compile Include="SkillGaugeWithHeader.xaml.cs">
       <DependentUpon>SkillGaugeWithHeader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Status.xaml.cs">
+      <DependentUpon>Status.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TenLevelsGauge.xaml.cs">
+      <DependentUpon>TenLevelsGauge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WillpowerGauge.xaml.cs">
+      <DependentUpon>WillpowerGauge.xaml</DependentUpon>
+    </Compile>
     <Page Include="Abilities.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Advantages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,15 +118,31 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PathGauge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SheetHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SkillGauge.xaml">
+    <Page Include="FiveLevelsGauge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SkillGaugeWithHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Status.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TenLevelsGauge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WillpowerGauge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

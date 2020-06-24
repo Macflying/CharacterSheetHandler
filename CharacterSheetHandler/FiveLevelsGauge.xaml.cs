@@ -4,16 +4,16 @@ using System.Windows.Controls;
 namespace CharacterSheetHandler
 {
     /// <summary>
-    /// Logique d'interaction pour SkillGauge.xaml
+    /// Logique d'interaction pour FiveLevelsGauge.xaml
     /// </summary>
-    public partial class SkillGauge : UserControl
+    public partial class FiveLevelsGauge : UserControl
     {
         #region Level
 
         public static readonly DependencyProperty LevelProperty =
             DependencyProperty.Register(
             nameof(Level), typeof(int),
-            typeof(SkillGauge));
+            typeof(FiveLevelsGauge));
 
         public int Level
         {
@@ -23,7 +23,7 @@ namespace CharacterSheetHandler
 
         #endregion Level
 
-        public SkillGauge()
+        public FiveLevelsGauge()
         {
             InitializeComponent();
         }

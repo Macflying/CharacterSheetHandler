@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:CharacterSheetHandler"
         mc:Ignorable="d"
         Title="Character sheet" Height="600" Width="1200">
-    <ScrollViewer VerticalScrollBarVisibility="Disabled"
-                  CanContentScroll="True">
+    <ScrollViewer>
         <StackPanel>
             <TextBlock HorizontalAlignment="Center"
                    Text="20th ANNIVERSARY EDITION"
@@ -20,13 +19,14 @@
                    Text="THE MASQUERADE"
                    FontWeight="DemiBold"
                    FontSize="20" />
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <StackPanel>
-                    <local:SheetHeader />
-                    <local:Attributes />
-                    <local:Abilities />
-                </StackPanel>
-            </ScrollViewer>
+
+            <StackPanel>
+                <local:SheetHeader />
+                <local:Attributes />
+                <local:Abilities />
+                <local:Advantages />
+                <local:Status />
+            </StackPanel>
         </StackPanel>
     </ScrollViewer>
 </Window>
