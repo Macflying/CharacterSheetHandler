@@ -22,6 +22,7 @@
             <Line />
             <local:WillpowerGauge />
             <Line />
+            <local:BloodPoolGauge />
         </StackPanel>
     </Grid>
 </UserControl>

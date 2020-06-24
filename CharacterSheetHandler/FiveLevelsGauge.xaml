@@ -4,18 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:converter="clr-namespace:CharacterSheetHandler.Converters"
-             xmlns:local="clr-namespace:CharacterSheetHandler"
              mc:Ignorable="d"
              x:Name="FiveLevelsGaugeName">
     <UserControl.Resources>
         <Style TargetType="CheckBox" BasedOn="{StaticResource RoundedCheckBox}" />
     </UserControl.Resources>
-    <StackPanel Orientation="Horizontal"
-                HorizontalAlignment="Left">
-        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=1}" />
-        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=2}" />
-        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=3}" />
-        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=4}" />
-        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={converter:NumberToBoolConverter}, ConverterParameter=5}" />
+    <StackPanel Style="{StaticResource Gauge}">
+        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=1}" />
+        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=2}" />
+        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=3}" />
+        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=4}" />
+        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=5}" />
     </StackPanel>
 </UserControl>

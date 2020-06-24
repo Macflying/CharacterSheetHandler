@@ -5,7 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <!--#region ScrollViewer-->
-        <Style TargetType="ScrollViewer">
+        <Style TargetType="ScrollViewer" x:Key="ScollViewer">
             <Setter Property="CanContentScroll" Value="False" />
             <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
             <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
@@ -25,6 +25,14 @@
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         </Style>
         <!--#endregion ListBox-->
+
+        <!--#region StackPanel-->
+        <Style TargetType="StackPanel" x:Key="Gauge">
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+        <!--#endregion StackPanel-->
 
         <!--#region Grid-->
         <Style TargetType="Grid">

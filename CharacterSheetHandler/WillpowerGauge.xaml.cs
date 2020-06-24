@@ -8,6 +8,21 @@ namespace CharacterSheetHandler
     /// </summary>
     public partial class WillpowerGauge : UserControl
     {
+        #region MaxLevel
+
+        public static readonly DependencyProperty MaxLevelProperty =
+            DependencyProperty.Register(
+            nameof(MaxLevel), typeof(int),
+            typeof(WillpowerGauge));
+
+        public int MaxLevel
+        {
+            get { return (int)GetValue(MaxLevelProperty); }
+            set { SetValue(MaxLevelProperty, value); }
+        }
+
+        #endregion MaxLevel
+
         #region Level
 
         public static readonly DependencyProperty LevelProperty =

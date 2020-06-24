@@ -61,7 +61,11 @@
     <Compile Include="Advantages.xaml.cs">
       <DependentUpon>Advantages.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BloodPoolGauge.xaml.cs">
+      <DependentUpon>BloodPoolGauge.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BaseValueConverter.cs" />
+    <Compile Include="Converters\MaxNumberValueConverter.cs" />
     <Compile Include="Converters\NumberToBoolConverter.cs" />
     <Compile Include="PathGauge.xaml.cs">
       <DependentUpon>PathGauge.xaml</DependentUpon>
@@ -93,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Attributes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BloodPoolGauge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
