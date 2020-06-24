@@ -63,6 +63,9 @@
     <Compile Include="SkillGauge.xaml.cs">
       <DependentUpon>SkillGauge.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SkillGaugeWithHeader.xaml.cs">
+      <DependentUpon>SkillGaugeWithHeader.xaml</DependentUpon>
+    </Compile>
     <Page Include="Attributes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -94,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SkillGauge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SkillGaugeWithHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -11,12 +11,12 @@
         <Style TargetType="Line" BasedOn="{StaticResource SplitterLine}" />
     </UserControl.Resources>
     <StackPanel>
-        <DockPanel>
+        <DockPanel HorizontalAlignment="Center">
             <Line DockPanel.Dock="Left" />
             <Line DockPanel.Dock="Right" />
             <TextBlock  Text="Attributes" />
         </DockPanel>
-        <Grid Margin="20">
+        <Grid Margin="20" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="200" />
@@ -27,7 +27,33 @@
                 <RowDefinition Height="20" />
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
-            <local:SkillGauge Level="3" />
+
+            <local:SkillGaugeWithHeader Grid.Column="0" Grid.Row="0"
+                                    Header="Strength" />
+
+            <local:SkillGaugeWithHeader Grid.Column="0" Grid.Row="1"
+                                    Header="Dexterity" />
+
+            <local:SkillGaugeWithHeader Grid.Column="0" Grid.Row="2"
+                                    Header="Stamina" />
+
+            <local:SkillGaugeWithHeader Grid.Column="1" Grid.Row="0"
+                                    Header="Charisma" />
+
+            <local:SkillGaugeWithHeader Grid.Column="1" Grid.Row="1"
+                                    Header="Manipulation" />
+
+            <local:SkillGaugeWithHeader Grid.Column="1" Grid.Row="2"
+                                    Header="Appearance" />
+
+            <local:SkillGaugeWithHeader Grid.Column="2" Grid.Row="0"
+                                    Header="Perception" />
+
+            <local:SkillGaugeWithHeader Grid.Column="2" Grid.Row="1"
+                                    Header="Intelligence" />
+
+            <local:SkillGaugeWithHeader Grid.Column="2" Grid.Row="2"
+                                    Header="Wits" />
         </Grid>
     </StackPanel>
 </UserControl>

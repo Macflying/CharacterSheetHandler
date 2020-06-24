@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterSheetHandler"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Character sheet" Height="450" Width="800">
     <StackPanel>
-        <local:SheetHeader />
-        <local:Attributes />
+        <local:SheetHeader HorizontalAlignment="Center" />
+        <local:Attributes HorizontalAlignment="Center" />
     </StackPanel>
 </Window>
