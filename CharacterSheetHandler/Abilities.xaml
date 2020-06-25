@@ -10,7 +10,7 @@
     <StackPanel>
         <TextBlock Style="{StaticResource Title}"
                    Text="Abilities" />
-        <Grid Margin="20">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />

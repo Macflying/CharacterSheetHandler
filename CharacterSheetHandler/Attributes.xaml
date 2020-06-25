@@ -16,6 +16,11 @@
             <Separator HorizontalAlignment="Stretch" />
         </StackPanel>
         <Grid>
+            <Grid.Resources>
+                <Style TargetType="RowDefinition">
+                    <Setter Property="Height" Value="60" />
+                </Style>
+            </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />

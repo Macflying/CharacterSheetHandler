@@ -11,10 +11,12 @@
     <StackPanel>
         <TextBlock Style="{StaticResource SubTitle}"
                    Text="Willpower" />
-        <StackPanel Style="{StaticResource Gauge}">
-            <StackPanel.Resources>
-                <Style TargetType="CheckBox" BasedOn="{StaticResource RoundedCheckBox}" />
-            </StackPanel.Resources>
+        <DockPanel Style="{StaticResource Gauge}">
+            <DockPanel.Resources>
+                <Style TargetType="CheckBox" BasedOn="{StaticResource RoundedCheckBox}">
+                    <Setter Property="DockPanel.Dock" Value="Right" />
+                </Style>
+            </DockPanel.Resources>
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=MaxLevel, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=1}" />
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=MaxLevel, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=2}" />
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=MaxLevel, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=3}" />
@@ -25,8 +27,13 @@
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=MaxLevel, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=8}" />
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=MaxLevel, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=9}" />
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=MaxLevel, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=10}" />
-        </StackPanel>
-        <StackPanel Style="{StaticResource Gauge}">
+        </DockPanel>
+        <DockPanel Style="{StaticResource Gauge}">
+            <DockPanel.Resources>
+                <Style TargetType="CheckBox">
+                    <Setter Property="DockPanel.Dock" Value="Right" />
+                </Style>
+            </DockPanel.Resources>
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=1}" />
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=2}" />
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=3}" />
@@ -37,6 +44,6 @@
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=8}" />
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=9}" />
             <CheckBox IsChecked="{Binding ElementName=WillpowerGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=10}" />
-        </StackPanel>
+        </DockPanel>
     </StackPanel>
 </UserControl>

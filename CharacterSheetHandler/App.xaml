@@ -14,6 +14,7 @@
 
         <!--#region ListBox-->
         <Style TargetType="ListBox" x:Key="SkillsList">
+            <Setter Property="Padding" Value="-10,0" />
             <Setter Property="ItemTemplate">
                 <Setter.Value>
                     <DataTemplate>
@@ -22,17 +23,22 @@
                     </DataTemplate>
                 </Setter.Value>
             </Setter>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         </Style>
         <!--#endregion ListBox-->
 
         <!--#region StackPanel-->
-        <Style TargetType="StackPanel" x:Key="Gauge">
+        <Style TargetType="StackPanel" x:Key="StackedGauge">
             <Setter Property="Height" Value="20" />
             <Setter Property="Orientation" Value="Horizontal" />
-            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
         </Style>
         <!--#endregion StackPanel-->
+
+        <!--#region DockPanel-->
+        <Style TargetType="DockPanel" x:Key="Gauge">
+            <Setter Property="Height" Value="20" />
+        </Style>
+        <!--#endregion DockPanel-->
 
         <!--#region Grid-->
         <Style TargetType="Grid">
@@ -41,11 +47,7 @@
         </Style>
 
         <Style TargetType="ColumnDefinition">
-            <Setter Property="Width" Value="200" />
-        </Style>
-
-        <Style TargetType="RowDefinition">
-            <Setter Property="Height" Value="20" />
+            <Setter Property="Width" Value="300" />
         </Style>
         <!--#endregion Grid-->
 
@@ -53,6 +55,7 @@
 
         <!--TextBox-->
         <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0,2" />
             <Setter Property="Foreground" Value="DarkGray" />
             <Setter Property="FontSize" Value="16" />
             <Setter Property="Background" Value="Transparent" />
@@ -106,12 +109,13 @@
         <!--#endregion Line-->
 
         <!--#region CheckBox-->
+
         <!--RoundedCheckBox-->
         <Style TargetType="CheckBox" x:Key="RoundedCheckBox">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="CheckBox">
-                        <RadioButton IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked, Mode=TwoWay}" />
+                        <RadioButton Margin="-20" IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked, Mode=TwoWay}" />
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>

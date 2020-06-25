@@ -9,14 +9,20 @@
     <UserControl.Resources>
         <Style TargetType="TextBlock" BasedOn="{StaticResource EntryHeaderTextBlock}" />
     </UserControl.Resources>
-    <DockPanel>
-        <TextBlock DockPanel.Dock="Left"
+    <Grid Width="250"
+          Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="75"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"
                    Text="{Binding ElementName=SkillGaugeWithHeaderName, Path=Header}" />
-        <Line DockPanel.Dock="Right"
-              Style="{StaticResource BlankLine}" />
-        <local:FiveLevelsGauge DockPanel.Dock="Right"
+        <Separator Grid.Column="1"
+                   Margin="3,0"
+                   VerticalAlignment="Bottom"/>
+        <local:FiveLevelsGauge Grid.Column="2"
                                VerticalAlignment="Bottom"
                                Level="{Binding ElementName=SkillGaugeWithHeaderName, Path=Level}" />
-        <Separator VerticalAlignment="Bottom" />
-    </DockPanel>
+    </Grid>
 </UserControl>
