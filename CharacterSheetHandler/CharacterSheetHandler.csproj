@@ -67,6 +67,7 @@
     <Compile Include="Converters\BaseValueConverter.cs" />
     <Compile Include="Converters\MaxNumberValueConverter.cs" />
     <Compile Include="Converters\NumberToBoolConverter.cs" />
+    <Compile Include="Converters\TextEmptyToVisibilityConverter.cs" />
     <Compile Include="PathGauge.xaml.cs">
       <DependentUpon>PathGauge.xaml</DependentUpon>
     </Compile>

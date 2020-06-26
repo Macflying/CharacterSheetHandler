@@ -4,6 +4,7 @@
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                  xmlns:local="clr-namespace:CharacterSheetHandler"
+                 xmlns:converter="clr-namespace:CharacterSheetHandler.Converters"
                  mc:Ignorable="d"
                  x:Name="PathGaugeName">
     <UserControl.Resources>
@@ -14,5 +15,14 @@
                    Text="Humanity/Path" />
         <local:TenLevelsGauge HorizontalAlignment="Center"
                               Level="{Binding ElementName=PathGaugeName, Path=Level}" />
+        <Grid HorizontalAlignment="Stretch"
+              Margin="75,0">
+            <TextBox HorizontalAlignment="Stretch"
+                     Name="Bearing" />
+            <TextBlock Style="{StaticResource PlaceHolderTextBlock}"
+                       Visibility="{Binding ElementName=Bearing, Path=Text, Converter={x:Static converter:TextEmptyToVisibilityConverter.NullOrEmptyToVisible}}"
+                       Text="Bearing">
+            </TextBlock>
+        </Grid>
     </StackPanel>
 </UserControl>
