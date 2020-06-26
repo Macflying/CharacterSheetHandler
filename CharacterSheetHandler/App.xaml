@@ -14,7 +14,8 @@
 
         <!--#region ListBox-->
         <Style TargetType="ListBox" x:Key="SkillsList">
-            <Setter Property="Padding" Value="-10,0" />
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="ItemTemplate">
                 <Setter.Value>
                     <DataTemplate>
@@ -31,11 +32,12 @@
             <Setter Property="Height" Value="20" />
             <Setter Property="Orientation" Value="Horizontal" />
             <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
         </Style>
         <!--#endregion StackPanel-->
 
         <!--#region DockPanel-->
-        <Style TargetType="DockPanel" x:Key="Gauge">
+        <Style TargetType="DockPanel" x:Key="DockedGauge">
             <Setter Property="Height" Value="20" />
         </Style>
         <!--#endregion DockPanel-->
@@ -43,7 +45,7 @@
         <!--#region Grid-->
         <Style TargetType="Grid">
             <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="Margin" Value="20" />
+            <Setter Property="Margin" Value="0" />
         </Style>
 
         <Style TargetType="ColumnDefinition">
@@ -108,14 +110,38 @@
         </Style>
         <!--#endregion Line-->
 
+        <!--#region Separator-->
+
+        <Style TargetType="Separator" x:Key="TitleSeparator">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="Width" Value="auto" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="Margin" Value="5,0" />
+        </Style>
+
+        <!--#endregion Separator-->
+
+        <!--#region Border-->
+
+        <Style TargetType="Border" x:Key="TitleBorder">
+            <Setter Property="Background" Value="DarkGray"/>
+        </Style>
+        
+        <!--#endregion Border-->
+
         <!--#region CheckBox-->
 
         <!--RoundedCheckBox-->
+        <Style TargetType="CheckBox">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+        </Style>
         <Style TargetType="CheckBox" x:Key="RoundedCheckBox">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="CheckBox">
-                        <RadioButton Margin="-20" IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked, Mode=TwoWay}" />
+                        <RadioButton IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked, Mode=TwoWay}" />
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>

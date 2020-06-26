@@ -15,9 +15,19 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <RichTextBox />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition  Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.ColumnSpan="3"
+                Style="{StaticResource TitleBorder}">
+            <TextBlock Style="{StaticResource Title}" />
+        </Border>
 
-        <StackPanel Grid.Column="1">
+        <RichTextBox Grid.Row="1"
+                     Background="LightGray"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
             <local:PathGauge />
             <Line />
             <local:WillpowerGauge />

@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterSheetHandler"
         mc:Ignorable="d"
-        Title="Character sheet" Height="600" Width="1200">
+         Height="auto" Width="auto"
+        Background="LightGray"
+        Title="Character sheet">
     <ScrollViewer>
         <StackPanel>
             <TextBlock HorizontalAlignment="Center"

@@ -8,10 +8,9 @@
              x:Name="TenLevelsGaugeName">
     <UserControl.Resources>
         <Style TargetType="CheckBox" BasedOn="{StaticResource RoundedCheckBox}">
-            <Setter Property="DockPanel.Dock" Value="Right" />
         </Style>
     </UserControl.Resources>
-    <DockPanel Style="{StaticResource Gauge}">
+    <StackPanel Style="{StaticResource StackedGauge}">
         <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=1}" />
         <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=2}" />
         <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=3}" />
@@ -22,5 +21,5 @@
         <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=8}" />
         <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=9}" />
         <CheckBox IsChecked="{Binding ElementName=TenLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=10}" />
-    </DockPanel>
+    </StackPanel>
 </UserControl>

@@ -9,33 +9,42 @@
     <UserControl.Resources>
         <Style TargetType="ListBox" BasedOn="{StaticResource SkillsList}" />
     </UserControl.Resources>
-    <StackPanel>
-        <TextBlock Style="{StaticResource Title}"
-                   Text="Advantages" />
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <TextBlock Text="Disciplines" />
-                <ListBox />
-            </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition  Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.ColumnSpan="3"
+                Style="{StaticResource TitleBorder}">
+            <TextBlock Style="{StaticResource Title}"
+                       Text="Advantages" />
+        </Border>
 
-            <StackPanel Grid.Column="1">
-                <TextBlock Text="Backgrounds" />
-                <ListBox />
-            </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Disciplines" />
+            <ListBox />
+        </StackPanel>
 
-            <StackPanel Grid.Column="2">
-                <TextBlock Text="Virtues" />
-                <local:SkillGaugeWithHeader Header="Conscience/Conviction" />
-                <Line Style="{StaticResource BlankLine}" />
-                <local:SkillGaugeWithHeader Header="Self-Control/Instinct" />
-                <Line Style="{StaticResource BlankLine}" />
-                <local:SkillGaugeWithHeader Header="Courage" />
-            </StackPanel>
-        </Grid>
-    </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Backgrounds" />
+            <ListBox />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Virtues" />
+            <local:SkillGaugeWithHeader Header="Conscience/Conviction" />
+            <Line Style="{StaticResource BlankLine}" />
+            <local:SkillGaugeWithHeader Header="Self-Control/Instinct" />
+            <Line Style="{StaticResource BlankLine}" />
+            <local:SkillGaugeWithHeader Header="Courage" />
+        </StackPanel>
+    </Grid>
 </UserControl>

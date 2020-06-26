@@ -14,7 +14,7 @@
     <StackPanel>
         <TextBlock Style="{StaticResource SubTitle}"
                    Text="Blood Pool" />
-        <DockPanel Style="{StaticResource Gauge}">
+        <StackPanel Style="{StaticResource StackedGauge}">
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=1}" />
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=2}" />
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=3}" />
@@ -25,8 +25,8 @@
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=8}" />
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=9}" />
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=10}" />
-        </DockPanel>
-        <DockPanel Style="{StaticResource Gauge}">
+        </StackPanel>
+        <StackPanel Style="{StaticResource StackedGauge}">
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=11}" />
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=12}" />
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=13}" />
@@ -37,6 +37,6 @@
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=18}" />
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=19}" />
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=20}" />
-        </DockPanel>
+        </StackPanel>
     </StackPanel>
 </UserControl>

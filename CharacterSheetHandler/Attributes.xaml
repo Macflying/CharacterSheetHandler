@@ -6,43 +6,38 @@
              mc:Ignorable="d">
     <UserControl.Resources>
     </UserControl.Resources>
-    <StackPanel>
-        <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Center">
-            <Separator HorizontalAlignment="Stretch" />
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition  Height="60" />
+        </Grid.RowDefinitions>
+        <Border Grid.ColumnSpan="3"
+                Style="{StaticResource TitleBorder}">
             <TextBlock Style="{StaticResource Title}"
-                       HorizontalAlignment="Center"
                        Text="Attributes" />
-            <Separator HorizontalAlignment="Stretch" />
+        </Border>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Physical" />
+            <ListBox />
         </StackPanel>
-        <Grid>
-            <Grid.Resources>
-                <Style TargetType="RowDefinition">
-                    <Setter Property="Height" Value="60" />
-                </Style>
-            </Grid.Resources>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <TextBlock Style="{StaticResource SubTitle}"
-                           Text="Physical" />
-                <ListBox />
-            </StackPanel>
 
-            <StackPanel Grid.Column="1">
-                <TextBlock Style="{StaticResource SubTitle}"
-                           Text="Social" />
-                <ListBox />
-            </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Social" />
+            <ListBox />
+        </StackPanel>
 
-            <StackPanel Grid.Column="2">
-                <TextBlock Style="{StaticResource SubTitle}"
-                           Text="Mental" />
-                <ListBox />
-            </StackPanel>
-        </Grid>
-    </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Mental" />
+            <ListBox />
+        </StackPanel>
+    </Grid>
 </UserControl>

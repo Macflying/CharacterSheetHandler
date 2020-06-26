@@ -12,6 +12,7 @@
     <StackPanel>
         <TextBlock Style="{StaticResource SubTitle}"
                    Text="Humanity/Path" />
-        <local:TenLevelsGauge Level="{Binding ElementName=PathGaugeName, Path=Level}" />
+        <local:TenLevelsGauge HorizontalAlignment="Center"
+                              Level="{Binding ElementName=PathGaugeName, Path=Level}" />
     </StackPanel>
 </UserControl>
