@@ -120,6 +120,21 @@
             <Setter Property="Width" Value="5" />
             <Setter Property="Height" Value="20" />
         </Style>
+
+        <!--BruiseLine-->
+        <Style TargetType="Line" x:Key="BruiseLine">
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Opacity" Value="1" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="StrokeThickness" Value="1" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="LayoutTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="0.5" ScaleY="0.5" />
+                </Setter.Value>
+            </Setter>
+        </Style>
         <!--#endregion Line-->
 
         <!--#region Separator-->
@@ -159,5 +174,62 @@
             </Setter>
         </Style>
         <!--#endregion CheckBox-->
+
+        <!--#region ComboboxItem-->
+        <!--StarItem-->
+        <Style TargetType="ComboBoxItem" x:Key="StarItem">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="Line" BasedOn="{StaticResource BruiseLine}" />
+                        </Grid.Resources>
+                        <Line X1="0" X2="20"
+                              Y1="10" Y2="10" />
+
+                        <Line X1="10" X2="10"
+                              Y1="0" Y2="20" />
+
+                        <Line X1="0" X2="20"
+                              Y1="20" Y2="0" />
+
+                        <Line X1="0" X2="20"
+                              Y1="0" Y2="20" />
+                    </Grid>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--SlashItem-->
+        <Style TargetType="ComboBoxItem" x:Key="SlashItem">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Grid>
+                        <Line Style="{StaticResource BruiseLine}"
+                          X1="0" X2="20"
+                          Y1="20" Y2="0" />
+                    </Grid>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--XItem-->
+        <Style TargetType="ComboBoxItem" x:Key="XItem">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="Line" BasedOn="{StaticResource BruiseLine}" />
+                        </Grid.Resources>
+                        <Line X1="0" X2="20"
+                              Y1="20" Y2="0" />
+
+                        <Line X1="0" X2="20"
+                              Y1="0" Y2="20" />
+                    </Grid>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion ComboboxItem-->
     </Application.Resources>
 </Application>

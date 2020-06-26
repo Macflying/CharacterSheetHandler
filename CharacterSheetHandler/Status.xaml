@@ -25,7 +25,8 @@
         </Border>
 
         <RichTextBox Grid.Row="1"
-                     Background="LightGray"/>
+                     Background="LightGray"
+                     Margin="10" />
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <local:PathGauge />
@@ -33,6 +34,19 @@
             <local:WillpowerGauge />
             <Line />
             <local:BloodPoolGauge />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2"
+                    Margin="10,0">
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Health" />
+            <local:BruiseCounter Header="Bruised" />
+            <local:BruiseCounter Header="Hurt" Malus="-1" />
+            <local:BruiseCounter Header="Injured" Malus="-1" />
+            <local:BruiseCounter Header="Wounded" Malus="-2" />
+            <local:BruiseCounter Header="Mauled" Malus="-2" />
+            <local:BruiseCounter Header="Crippled" Malus="-5" />
+            <local:BruiseCounter Header="Incapacitated" />
         </StackPanel>
     </Grid>
 </UserControl>

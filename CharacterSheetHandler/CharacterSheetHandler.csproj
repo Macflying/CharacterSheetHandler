@@ -64,6 +64,9 @@
     <Compile Include="BloodPoolGauge.xaml.cs">
       <DependentUpon>BloodPoolGauge.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BruiseCounter.xaml.cs">
+      <DependentUpon>BruiseCounter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BaseValueConverter.cs" />
     <Compile Include="Converters\MaxNumberValueConverter.cs" />
     <Compile Include="Converters\NumberToBoolConverter.cs" />
@@ -102,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BloodPoolGauge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BruiseCounter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
