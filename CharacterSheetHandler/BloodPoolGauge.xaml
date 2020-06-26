@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:converter="clr-namespace:CharacterSheetHandler.Converters"
+            xmlns:local="clr-namespace:CharacterSheetHandler"
              mc:Ignorable="d"
              Name="BloodPoolGaugeName">
     <UserControl.Resources>
@@ -38,5 +39,7 @@
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=19}" />
             <CheckBox IsChecked="{Binding ElementName=BloodPoolGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=20}" />
         </StackPanel>
+        <local:FieldEntryWithHeader Margin="70,0"
+                                    Header="Blood Per Turn:" />
     </StackPanel>
 </UserControl>
