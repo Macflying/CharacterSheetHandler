@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1169
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler", "CharacterSheetHandler\CharacterSheetHandler.csproj", "{5E395DE4-3D9D-43B4-9553-45A9EAECE721}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.ViewModels", "CharacterSheet.ViewModels\CharacterSheetHandler.ViewModels.csproj", "{D11A1A44-EE9B-4567-AC77-8865AA915267}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.ViewModels.Tests", "CharacterSheet.ViewModels.Tests\CharacterSheetHandler.ViewModels.Tests.csproj", "{52D623B4-1B15-46DB-AFA5-814D7732E108}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{5E395DE4-3D9D-43B4-9553-45A9EAECE721}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E395DE4-3D9D-43B4-9553-45A9EAECE721}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E395DE4-3D9D-43B4-9553-45A9EAECE721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D11A1A44-EE9B-4567-AC77-8865AA915267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D11A1A44-EE9B-4567-AC77-8865AA915267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D11A1A44-EE9B-4567-AC77-8865AA915267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D11A1A44-EE9B-4567-AC77-8865AA915267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D623B4-1B15-46DB-AFA5-814D7732E108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D623B4-1B15-46DB-AFA5-814D7732E108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D623B4-1B15-46DB-AFA5-814D7732E108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D623B4-1B15-46DB-AFA5-814D7732E108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
