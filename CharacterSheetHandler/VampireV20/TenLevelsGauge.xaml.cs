@@ -1,19 +1,19 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace CharacterSheetHandler
+namespace CharacterSheetHandler.VampireV20
 {
     /// <summary>
-    /// Interaction logic for BloodPoolGauge.xaml
+    /// Interaction logic for TenLevelsGauge.xaml
     /// </summary>
-    public partial class BloodPoolGauge : UserControl
+    public partial class TenLevelsGauge : UserControl
     {
         #region Level
 
         public static readonly DependencyProperty LevelProperty =
             DependencyProperty.Register(
             nameof(Level), typeof(int),
-            typeof(BloodPoolGauge));
+            typeof(TenLevelsGauge));
 
         public int Level
         {
@@ -23,7 +23,7 @@ namespace CharacterSheetHandler
 
         #endregion Level
 
-        public BloodPoolGauge()
+        public TenLevelsGauge()
         {
             InitializeComponent();
         }

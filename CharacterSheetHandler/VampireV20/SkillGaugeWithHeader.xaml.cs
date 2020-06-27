@@ -1,19 +1,19 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace CharacterSheetHandler
+namespace CharacterSheetHandler.VampireV20
 {
     /// <summary>
-    /// Logique d'interaction pour FieldEntryWithHeader.xaml
+    /// Logique d'interaction pour SkillGaugeWithHeader.xaml
     /// </summary>
-    public partial class FieldEntryWithHeader : UserControl
+    public partial class SkillGaugeWithHeader : UserControl
     {
         #region Header
 
         public static readonly DependencyProperty HeaderProperty =
             DependencyProperty.Register(
             nameof(Header), typeof(string),
-            typeof(FieldEntryWithHeader));
+            typeof(SkillGaugeWithHeader));
 
         public string Header
         {
@@ -23,22 +23,22 @@ namespace CharacterSheetHandler
 
         #endregion Header
 
-        #region Text
+        #region Level
 
-        public static readonly DependencyProperty TextProperty =
+        public static readonly DependencyProperty LevelProperty =
             DependencyProperty.Register(
-            nameof(Text), typeof(string),
-            typeof(FieldEntryWithHeader));
+            nameof(Level), typeof(int),
+            typeof(SkillGaugeWithHeader));
 
-        public string Text
+        public int Level
         {
-            get { return (string)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            get { return (int)GetValue(LevelProperty); }
+            set { SetValue(LevelProperty, value); }
         }
 
-        #endregion Text
+        #endregion Level
 
-        public FieldEntryWithHeader()
+        public SkillGaugeWithHeader()
         {
             InitializeComponent();
         }

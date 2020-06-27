@@ -1,19 +1,19 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace CharacterSheetHandler
+namespace CharacterSheetHandler.VampireV20
 {
     /// <summary>
-    /// Interaction logic for PathGauge.xaml
+    /// Interaction logic for BloodPoolGauge.xaml
     /// </summary>
-    public partial class PathGauge : UserControl
+    public partial class BloodPoolGauge : UserControl
     {
         #region Level
 
         public static readonly DependencyProperty LevelProperty =
             DependencyProperty.Register(
             nameof(Level), typeof(int),
-            typeof(PathGauge));
+            typeof(BloodPoolGauge));
 
         public int Level
         {
@@ -23,7 +23,7 @@ namespace CharacterSheetHandler
 
         #endregion Level
 
-        public PathGauge() : base()
+        public BloodPoolGauge()
         {
             InitializeComponent();
         }

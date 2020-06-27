@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace CharacterSheetHandler
+namespace CharacterSheetHandler.VampireV20
 {
     /// <summary>
     /// Interaction logic for WillpowerGauge.xaml

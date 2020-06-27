@@ -55,64 +55,64 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Abilities.xaml.cs">
+    <Compile Include="VampireV20\Abilities.xaml.cs">
       <DependentUpon>Abilities.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Advantages.xaml.cs">
+    <Compile Include="VampireV20\Advantages.xaml.cs">
       <DependentUpon>Advantages.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BloodPoolGauge.xaml.cs">
+    <Compile Include="VampireV20\BloodPoolGauge.xaml.cs">
       <DependentUpon>BloodPoolGauge.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BruiseCounter.xaml.cs">
+    <Compile Include="VampireV20\BruiseCounter.xaml.cs">
       <DependentUpon>BruiseCounter.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\BaseValueConverter.cs" />
     <Compile Include="Converters\MaxNumberValueConverter.cs" />
     <Compile Include="Converters\NumberToBoolConverter.cs" />
     <Compile Include="Converters\TextEmptyToVisibilityConverter.cs" />
-    <Compile Include="PathGauge.xaml.cs">
+    <Compile Include="VampireV20\PathGauge.xaml.cs">
       <DependentUpon>PathGauge.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SheetHeader.xaml.cs">
+    <Compile Include="VampireV20\SheetHeader.xaml.cs">
       <DependentUpon>SheetHeader.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FiveLevelsGauge.xaml.cs">
+    <Compile Include="VampireV20\FiveLevelsGauge.xaml.cs">
       <DependentUpon>FiveLevelsGauge.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SkillGaugeWithHeader.xaml.cs">
+    <Compile Include="VampireV20\SkillGaugeWithHeader.xaml.cs">
       <DependentUpon>SkillGaugeWithHeader.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Status.xaml.cs">
+    <Compile Include="VampireV20\Status.xaml.cs">
       <DependentUpon>Status.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TenLevelsGauge.xaml.cs">
+    <Compile Include="VampireV20\TenLevelsGauge.xaml.cs">
       <DependentUpon>TenLevelsGauge.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WillpowerGauge.xaml.cs">
+    <Compile Include="VampireV20\WillpowerGauge.xaml.cs">
       <DependentUpon>WillpowerGauge.xaml</DependentUpon>
     </Compile>
-    <Page Include="Abilities.xaml">
+    <Page Include="VampireV20\Abilities.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Advantages.xaml">
+    <Page Include="VampireV20\Advantages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Attributes.xaml">
+    <Page Include="VampireV20\Attributes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BloodPoolGauge.xaml">
+    <Page Include="VampireV20\BloodPoolGauge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BruiseCounter.xaml">
+    <Page Include="VampireV20\BruiseCounter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FieldEntryWithHeader.xaml">
+    <Page Include="VampireV20\FieldEntryWithHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,41 +124,41 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Attributes.xaml.cs">
+    <Compile Include="VampireV20\Attributes.xaml.cs">
       <DependentUpon>Attributes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FieldEntryWithHeader.xaml.cs">
+    <Compile Include="VampireV20\FieldEntryWithHeader.xaml.cs">
       <DependentUpon>FieldEntryWithHeader.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PathGauge.xaml">
+    <Page Include="VampireV20\PathGauge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SheetHeader.xaml">
+    <Page Include="VampireV20\SheetHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FiveLevelsGauge.xaml">
+    <Page Include="VampireV20\FiveLevelsGauge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SkillGaugeWithHeader.xaml">
+    <Page Include="VampireV20\SkillGaugeWithHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Status.xaml">
+    <Page Include="VampireV20\Status.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TenLevelsGauge.xaml">
+    <Page Include="VampireV20\TenLevelsGauge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WillpowerGauge.xaml">
+    <Page Include="VampireV20\WillpowerGauge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

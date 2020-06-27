@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CharacterSheetHandler"
+        xmlns:vampire="clr-namespace:CharacterSheetHandler.VampireV20"
         mc:Ignorable="d"
         Background="LightGray"
         Title="Character sheet">
@@ -25,11 +25,11 @@
 
         <ScrollViewer Style="{StaticResource ScollViewer}">
             <StackPanel>
-                <local:SheetHeader Margin="10,5" />
-                <local:Attributes Margin="10,5" />
-                <local:Abilities Margin="10,5" />
-                <local:Advantages Margin="10,5" />
-                <local:Status Margin="10,5" />
+                <vampire:SheetHeader Margin="10,5" />
+                <vampire:Attributes Margin="10,5" />
+                <vampire:Abilities Margin="10,5" />
+                <vampire:Advantages Margin="10,5" />
+                <vampire:Status Margin="10,5" />
             </StackPanel>
         </ScrollViewer>
     </DockPanel>

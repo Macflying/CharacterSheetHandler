@@ -1,19 +1,19 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace CharacterSheetHandler
+namespace CharacterSheetHandler.VampireV20
 {
     /// <summary>
-    /// Interaction logic for TenLevelsGauge.xaml
+    /// Interaction logic for PathGauge.xaml
     /// </summary>
-    public partial class TenLevelsGauge : UserControl
+    public partial class PathGauge : UserControl
     {
         #region Level
 
         public static readonly DependencyProperty LevelProperty =
             DependencyProperty.Register(
             nameof(Level), typeof(int),
-            typeof(TenLevelsGauge));
+            typeof(PathGauge));
 
         public int Level
         {
@@ -23,7 +23,7 @@ namespace CharacterSheetHandler
 
         #endregion Level
 
-        public TenLevelsGauge()
+        public PathGauge() : base()
         {
             InitializeComponent();
         }
