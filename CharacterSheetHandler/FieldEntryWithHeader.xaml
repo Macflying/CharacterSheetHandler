@@ -6,14 +6,12 @@
              mc:Ignorable="d"
              Name="FieldEntryWithHeaderName">
     <UserControl.Resources>
-        <Style TargetType="Line" BasedOn="{StaticResource BlankLine}" />
         <Style TargetType="TextBlock" BasedOn="{StaticResource EntryHeaderTextBlock}" />
+        <Style TargetType="TextBox" BasedOn="{StaticResource OneLineEntry}" />
     </UserControl.Resources>
     <DockPanel>
         <TextBlock DockPanel.Dock="Left"
                        Text="{Binding ElementName=FieldEntryWithHeaderName, Path=Header}" />
-        <Line DockPanel.Dock="Left" />
-        <Line DockPanel.Dock="Right" />
         <TextBox Text="{Binding ElementName=FieldEntryWithHeaderName, Path=Text}" />
     </DockPanel>
 </UserControl>

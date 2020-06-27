@@ -11,6 +11,7 @@
         <Style TargetType="CheckBox">
             <Setter Property="DockPanel.Dock" Value="Right" />
         </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource OneLineEntry}" />
     </UserControl.Resources>
     <StackPanel>
         <TextBlock Style="{StaticResource SubTitle}"

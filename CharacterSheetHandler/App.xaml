@@ -7,7 +7,6 @@
     <Application.Resources>
         <!--#region ScrollViewer-->
         <Style TargetType="ScrollViewer" x:Key="ScollViewer">
-            <Setter Property="CanContentScroll" Value="False" />
             <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
             <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
         </Style>
@@ -57,13 +56,14 @@
         <!--#region TextBox-->
 
         <!--TextBox-->
-        <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="0,2" />
-            <Setter Property="Foreground" Value="DarkGray" />
+        <Style TargetType="TextBox" x:Key="OneLineEntry">
+            <Setter Property="Margin" Value="5,2" />
+            <Setter Property="Foreground" Value="DarkSlateGray" />
             <Setter Property="FontSize" Value="16" />
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="TextAlignment" Value="Left" />
             <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Style.Triggers>
                 <Trigger Property="IsFocused" Value="true">
                     <Setter Property="Foreground" Value="Black" />

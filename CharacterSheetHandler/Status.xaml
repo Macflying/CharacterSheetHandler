@@ -47,6 +47,20 @@
             <local:BruiseCounter Header="Mauled" Malus="-2" />
             <local:BruiseCounter Header="Crippled" Malus="-5" />
             <local:BruiseCounter Header="Incapacitated" />
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Weakness" />
+            <TextBox HorizontalAlignment="Stretch"
+                         Height="45"
+                         FontSize="16"
+                         TextWrapping="Wrap"
+                         Background="Transparent" />
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Experience" />
+            <TextBox HorizontalAlignment="Stretch"
+                         Height="45"
+                         FontSize="16"
+                         TextWrapping="Wrap"
+                         Background="Transparent" />
         </StackPanel>
     </Grid>
 </UserControl>

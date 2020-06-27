@@ -5,30 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterSheetHandler"
         mc:Ignorable="d"
-         Height="auto" Width="auto"
         Background="LightGray"
         Title="Character sheet">
-    <ScrollViewer>
-        <StackPanel>
-            <TextBlock HorizontalAlignment="Center"
+    <DockPanel>
+        <TextBlock HorizontalAlignment="Center"
                    Text="20th ANNIVERSARY EDITION"
+                   DockPanel.Dock="Top"
                    FontSize="16" />
-            <TextBlock HorizontalAlignment="Center"
+        <TextBlock HorizontalAlignment="Center"
                    Text="VAMPIRE"
                    FontSize="70"
+                   DockPanel.Dock="Top"
                    Margin="-20" />
-            <TextBlock HorizontalAlignment="Center"
+        <TextBlock HorizontalAlignment="Center"
                    Text="THE MASQUERADE"
                    FontWeight="DemiBold"
+                   DockPanel.Dock="Top"
                    FontSize="20" />
 
+        <ScrollViewer Style="{StaticResource ScollViewer}">
             <StackPanel>
-                <local:SheetHeader />
-                <local:Attributes />
-                <local:Abilities />
-                <local:Advantages />
-                <local:Status />
+                <local:SheetHeader Margin="10,5" />
+                <local:Attributes Margin="10,5" />
+                <local:Abilities Margin="10,5" />
+                <local:Advantages Margin="10,5" />
+                <local:Status Margin="10,5" />
             </StackPanel>
-        </StackPanel>
-    </ScrollViewer>
+        </ScrollViewer>
+    </DockPanel>
 </Window>

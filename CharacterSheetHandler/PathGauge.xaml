@@ -9,6 +9,7 @@
                  x:Name="PathGaugeName">
     <UserControl.Resources>
         <Style TargetType="CheckBox" BasedOn="{StaticResource RoundedCheckBox}" />
+        <Style TargetType="TextBox" BasedOn="{StaticResource OneLineEntry}" />
     </UserControl.Resources>
     <StackPanel>
         <TextBlock Style="{StaticResource SubTitle}"
