@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CharacterSheetHandler.VampireV20 {
+namespace CharacterSheetHandler.View.VampireV20 {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace CharacterSheetHandler.VampireV20 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CharacterSheetHandler.VampireV20.VampireSheet", typeof(VampireSheet).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CharacterSheetHandler.View.VampireV20.VampireSheet", typeof(VampireSheet).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

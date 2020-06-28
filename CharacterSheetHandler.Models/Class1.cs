@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CharacterSheet.ViewModels
+namespace CharacterSheetHandler.Models
 {
     public class Class1
     {

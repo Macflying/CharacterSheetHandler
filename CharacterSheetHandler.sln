@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler", "CharacterSheetHandler\CharacterSheetHandler.csproj", "{5E395DE4-3D9D-43B4-9553-45A9EAECE721}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.View", "CharacterSheetHandler\CharacterSheetHandler.View.csproj", "{5E395DE4-3D9D-43B4-9553-45A9EAECE721}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.ViewModels", "CharacterSheet.ViewModels\CharacterSheetHandler.ViewModels.csproj", "{D11A1A44-EE9B-4567-AC77-8865AA915267}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.ViewModels", "CharacterSheet.ViewModels\CharacterSheetHandler.ViewModels.csproj", "{D11A1A44-EE9B-4567-AC77-8865AA915267}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.ViewModels.Tests", "CharacterSheet.ViewModels.Tests\CharacterSheetHandler.ViewModels.Tests.csproj", "{52D623B4-1B15-46DB-AFA5-814D7732E108}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.ViewModels.Tests", "CharacterSheet.ViewModels.Tests\CharacterSheetHandler.ViewModels.Tests.csproj", "{52D623B4-1B15-46DB-AFA5-814D7732E108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.Models", "CharacterSheetHandler.Models\CharacterSheetHandler.Models.csproj", "{758D43DC-1160-487B-AAB2-25714E30DCBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.Models.Tests", "CharacterSheetHandler.Models.Tests\CharacterSheetHandler.Models.Tests.csproj", "{A3D41E92-CD51-4CE9-8F7A-4189040DB726}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{52D623B4-1B15-46DB-AFA5-814D7732E108}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52D623B4-1B15-46DB-AFA5-814D7732E108}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52D623B4-1B15-46DB-AFA5-814D7732E108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{758D43DC-1160-487B-AAB2-25714E30DCBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758D43DC-1160-487B-AAB2-25714E30DCBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758D43DC-1160-487B-AAB2-25714E30DCBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758D43DC-1160-487B-AAB2-25714E30DCBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D41E92-CD51-4CE9-8F7A-4189040DB726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D41E92-CD51-4CE9-8F7A-4189040DB726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D41E92-CD51-4CE9-8F7A-4189040DB726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D41E92-CD51-4CE9-8F7A-4189040DB726}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
