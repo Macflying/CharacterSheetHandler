@@ -16,4 +16,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CharacterSheetHandler.Models\CharacterSheetHandler.Models.csproj" />
+  </ItemGroup>
+
 </Project>
