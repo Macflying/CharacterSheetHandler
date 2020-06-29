@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CharacterSheetHandler.Models.Tests
+namespace CharacterSheetHandler.Models.Tests.Vampire
 {
     public class VampireSheetTest
     {

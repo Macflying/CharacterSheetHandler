@@ -20,8 +20,4 @@
     <ProjectReference Include="..\CharacterSheetHandler.Models\CharacterSheetHandler.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Vampire\" />
-  </ItemGroup>
-
 </Project>

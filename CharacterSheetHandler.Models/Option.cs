@@ -13,10 +13,7 @@ namespace CharacterSheetHandler.Models
         public class Some : Option<T>
         {
             private T _content;
-            public Some(T value)
-            {
-                _content = value;
-            }
+            public Some(T value) => _content = value;
 
             public static implicit operator T(Some some) => some._content;
         }
