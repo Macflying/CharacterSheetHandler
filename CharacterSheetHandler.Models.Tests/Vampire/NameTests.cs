@@ -60,7 +60,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         }
 
         [Property(Arbitrary = new[] { typeof(StringArbitrary)})]
-        public Property GoodString_Gives_NameWithValue(NonNullOrWhiteSpacesStringMaxLength20 value)
+        public Property GoodString_Gives_NameWithValue(NonNullOrWhiteSpacesStringMaxWithMaxLength value)
         {
             var result = Name.New(value.Get);
 

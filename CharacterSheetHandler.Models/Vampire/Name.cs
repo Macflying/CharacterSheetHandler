@@ -1,6 +1,11 @@
-﻿namespace CharacterSheetHandler.Models.Vampire
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+
+namespace CharacterSheetHandler.Models.Vampire
 {
-    public class Name
+    [DebuggerDisplay("Name: {Value}")]
+    public class Name : IEquatable<Name>
     {
         public string Value { get; }
         private Name(string name) => Value = name;
@@ -15,6 +20,27 @@
 
             return Ok.Value<Name, NameError>(new Name(name));
         }
+
+        public override bool Equals(object obj) =>
+            Equals(obj as Name);
+
+        public bool Equals(Name other) =>
+            other != null
+            && Value == other.Value;
+
+        public override int GetHashCode() =>
+            HashCode.Combine(Value);
+
+        public override string ToString()
+        {
+            return $"{Value}";
+        }
+
+        public static bool operator ==(Name left, Name right) =>
+            EqualityComparer<Name>.Default.Equals(left, right);
+
+        public static bool operator !=(Name left, Name right) =>
+            !(left == right);
     }
 
     public abstract class NameError
