@@ -1,12 +1,8 @@
-﻿using CharacterSheetHandler.Models.Vampire;
+﻿using CharacterSheetHandler.Models.Tests.Vampire.Arbitraries;
+using CharacterSheetHandler.Models.Vampire;
 
 using FsCheck;
 using FsCheck.Xunit;
-
-using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
 
 namespace CharacterSheetHandler.Models.Tests.Vampire
 {

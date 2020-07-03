@@ -31,10 +31,8 @@ namespace CharacterSheetHandler.Models.Vampire
         public override int GetHashCode() =>
             HashCode.Combine(Value);
 
-        public override string ToString()
-        {
-            return $"{Value}";
-        }
+        public override string ToString() =>
+            $"{Value}";
 
         public static bool operator ==(Name left, Name right) =>
             EqualityComparer<Name>.Default.Equals(left, right);

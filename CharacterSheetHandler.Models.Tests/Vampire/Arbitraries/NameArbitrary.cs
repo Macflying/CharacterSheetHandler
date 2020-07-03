@@ -2,7 +2,7 @@
 
 using FsCheck;
 
-namespace CharacterSheetHandler.Models.Tests.Vampire
+namespace CharacterSheetHandler.Models.Tests.Vampire.Arbitraries
 {
     public class NameArbitrary
     {

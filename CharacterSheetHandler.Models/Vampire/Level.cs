@@ -44,10 +44,8 @@ namespace CharacterSheetHandler.Models.Vampire
         public override int GetHashCode() =>
             HashCode.Combine(Max, Value);
 
-        public override string ToString()
-        {
-            return $"{Value}/{Max}";
-        }
+        public override string ToString() =>
+            $"{Value}/{Max}";
 
         public static bool operator ==(Level left, Level right) =>
             EqualityComparer<Level>.Default.Equals(left, right);

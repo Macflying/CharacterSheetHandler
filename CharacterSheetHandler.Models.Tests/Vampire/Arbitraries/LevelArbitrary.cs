@@ -6,7 +6,7 @@ using Microsoft.FSharp.Core;
 
 using System;
 
-namespace CharacterSheetHandler.Models.Tests.Vampire
+namespace CharacterSheetHandler.Models.Tests.Vampire.Arbitraries
 {
     public static class LevelArbitrary
     {
