@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.View", "CharacterSheetHandler\CharacterSheetHandler.View.csproj", "{5E395DE4-3D9D-43B4-9553-45A9EAECE721}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.ViewModels", "CharacterSheet.ViewModels\CharacterSheetHandler.ViewModels.csproj", "{D11A1A44-EE9B-4567-AC77-8865AA915267}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.ViewModels.Tests", "CharacterSheet.ViewModels.Tests\CharacterSheetHandler.ViewModels.Tests.csproj", "{52D623B4-1B15-46DB-AFA5-814D7732E108}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.Models", "CharacterSheetHandler.Models\CharacterSheetHandler.Models.csproj", "{758D43DC-1160-487B-AAB2-25714E30DCBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.Models", "CharacterSheetHandler.Models\CharacterSheetHandler.Models.csproj", "{758D43DC-1160-487B-AAB2-25714E30DCBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.Models.Tests", "CharacterSheetHandler.Models.Tests\CharacterSheetHandler.Models.Tests.csproj", "{A3D41E92-CD51-4CE9-8F7A-4189040DB726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.Models.Tests", "CharacterSheetHandler.Models.Tests\CharacterSheetHandler.Models.Tests.csproj", "{A3D41E92-CD51-4CE9-8F7A-4189040DB726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.DTOs", "CharacterSheetHandler.DTOs\CharacterSheetHandler.DTOs.csproj", "{5F1D88B8-8275-4897-8C21-8F016DD1A6DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.DTOs", "CharacterSheetHandler.DTOs\CharacterSheetHandler.DTOs.csproj", "{5F1D88B8-8275-4897-8C21-8F016DD1A6DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.View", "CharacterSheetHandler.View\CharacterSheetHandler.View.csproj", "{768BF5EB-6790-4B0C-B3CB-01C4FEDD20E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5E395DE4-3D9D-43B4-9553-45A9EAECE721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E395DE4-3D9D-43B4-9553-45A9EAECE721}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E395DE4-3D9D-43B4-9553-45A9EAECE721}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E395DE4-3D9D-43B4-9553-45A9EAECE721}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D11A1A44-EE9B-4567-AC77-8865AA915267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D11A1A44-EE9B-4567-AC77-8865AA915267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D11A1A44-EE9B-4567-AC77-8865AA915267}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{5F1D88B8-8275-4897-8C21-8F016DD1A6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F1D88B8-8275-4897-8C21-8F016DD1A6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F1D88B8-8275-4897-8C21-8F016DD1A6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{768BF5EB-6790-4B0C-B3CB-01C4FEDD20E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{768BF5EB-6790-4B0C-B3CB-01C4FEDD20E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{768BF5EB-6790-4B0C-B3CB-01C4FEDD20E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{768BF5EB-6790-4B0C-B3CB-01C4FEDD20E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

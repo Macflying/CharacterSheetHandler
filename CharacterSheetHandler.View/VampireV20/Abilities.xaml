@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="CharacterSheetHandler.VampireV20.Abilities"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="ListBox" BasedOn="{StaticResource SkillsList}" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition  Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.ColumnSpan="3"
+                Style="{StaticResource TitleBorder}">
+            <TextBlock Style="{StaticResource Title}"
+                       Text="Abilities" />
+        </Border>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Talents" />
+            <ListBox ItemsSource="{Binding}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Skills" />
+            <ListBox ItemsSource="{Binding}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <TextBlock Style="{StaticResource SubTitle}"
+                       Text="Knowledges" />
+            <ListBox ItemsSource="{Binding}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

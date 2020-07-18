@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CharacterSheet.ViewModels
 {
@@ -13,7 +14,7 @@ namespace CharacterSheet.ViewModels
             PropertyChanged?.Invoke(null, new PropertyChangedEventArgs(propertyName));
         }
 
-        public bool SetValue<T>(ref T fieldValue, T newValue, string propertyName)
+        public bool SetValue<T>(ref T fieldValue, T newValue, [CallerMemberName] string propertyName = null)
         {
             if (!EqualityComparer<T>.Default.Equals(fieldValue, newValue))
             {

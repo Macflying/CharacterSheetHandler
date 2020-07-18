@@ -214,5 +214,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CharacterSheet.ViewModels\CharacterSheetHandler.ViewModels.csproj">
+      <Project>{d11a1a44-ee9b-4567-ac77-8865aa915267}</Project>
+      <Name>CharacterSheetHandler.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
