@@ -1,4 +1,4 @@
-﻿namespace CharacterSheetHandler.ViewModels.Vampires
+﻿namespace CharacterSheetHandler.ViewModels.Vampire
 {
     public class SkillViewModel
     {

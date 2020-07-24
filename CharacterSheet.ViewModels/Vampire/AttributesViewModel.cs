@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace CharacterSheetHandler.ViewModels.Vampires
+namespace CharacterSheetHandler.ViewModels.Vampire
 {
     public class AttributesViewModel
     {

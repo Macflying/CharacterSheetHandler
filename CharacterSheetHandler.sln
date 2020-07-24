@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.Model
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.DTOs", "CharacterSheetHandler.DTOs\CharacterSheetHandler.DTOs.csproj", "{5F1D88B8-8275-4897-8C21-8F016DD1A6DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.View", "CharacterSheetHandler.View\CharacterSheetHandler.View.csproj", "{768BF5EB-6790-4B0C-B3CB-01C4FEDD20E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.Views", "CharacterSheetHandler.Views\CharacterSheetHandler.Views.csproj", "{2BB20E38-A3B1-4157-8B23-83841BB1AB77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{5F1D88B8-8275-4897-8C21-8F016DD1A6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F1D88B8-8275-4897-8C21-8F016DD1A6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F1D88B8-8275-4897-8C21-8F016DD1A6DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{768BF5EB-6790-4B0C-B3CB-01C4FEDD20E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{768BF5EB-6790-4B0C-B3CB-01C4FEDD20E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{768BF5EB-6790-4B0C-B3CB-01C4FEDD20E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{768BF5EB-6790-4B0C-B3CB-01C4FEDD20E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB20E38-A3B1-4157-8B23-83841BB1AB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB20E38-A3B1-4157-8B23-83841BB1AB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB20E38-A3B1-4157-8B23-83841BB1AB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB20E38-A3B1-4157-8B23-83841BB1AB77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
