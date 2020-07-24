@@ -24,31 +24,40 @@
         </Grid.RowDefinitions>
 
         <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="0"
-                                    Header="Name:" />
+                                    Header="Name:"
+                                    Text="{Binding Name}"/>
 
         <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="1"
-                                    Header="Player:" />
+                                    Header="Player:"
+                                    Text="{Binding Player}"/>
 
         <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="2"
-                                    Header="Chronicle:" />
+                                    Header="Chronicle:"
+                                    Text="{Binding Chronicle}"/>
 
         <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="0"
-                                    Header="Nature:" />
+                                    Header="Nature:"
+                                    Text="{Binding Nature}"/>
 
         <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="1"
-                                    Header="Demeanor:" />
+                                    Header="Demeanor:"
+                                    Text="{Binding Demeanor}"/>
 
         <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="2"
-                                    Header="Concept:" />
+                                    Header="Concept:"
+                                    Text="{Binding Concept}"/>
 
         <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="0"
-                                    Header="Clan:" />
+                                    Header="Clan:"
+                                    Text="{Binding Clan}"/>
 
         <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="1"
-                                    Header="Generation:" />
+                                    Header="Generation:"
+                                    Text="{Binding Generation}"/>
 
         <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="2"
-                                    Header="Sire:" />
+                                    Header="Sire:"
+                                    Text="{Binding Sire}"/>
     </Grid>
 
 </UserControl>

@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:CharacterSheetHandler.Views.Vampire"
              xmlns:converter="clr-namespace:CharacterSheetHandler.Views.Converters"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             x:Name="WillpowerGaugeName">
     <UserControl.Resources>
     </UserControl.Resources>
     <StackPanel>

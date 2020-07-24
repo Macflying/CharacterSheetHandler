@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:converter="clr-namespace:CharacterSheetHandler.Views.Converters"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             x:Name="FiveLevelsGaugeName">
     <UserControl.Resources>
         <Style TargetType="CheckBox" BasedOn="{StaticResource RoundedCheckBox}"/>
     </UserControl.Resources>

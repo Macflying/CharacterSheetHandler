@@ -24,11 +24,16 @@
 
         <ScrollViewer Style="{StaticResource ScollViewer}">
             <StackPanel>
-                <local:SheetHeader Margin="10,5" />
-                <local:Attributes Margin="10,5" />
-                <local:Abilities Margin="10,5" />
-                <local:Advantages Margin="10,5" />
-                <local:Status Margin="10,5" />
+                <local:SheetHeader Margin="10,5"
+                                   DataContext="{Binding SheetHeader}"/>
+                <local:Attributes Margin="10,5"
+                                  DataContext="{Binding Attributes}"/>
+                <local:Abilities Margin="10,5"
+                                 DataContext="{Binding Abilities}"/>
+                <local:Advantages Margin="10,5" 
+                                  DataContext="{Binding Advantages}"/>
+                <local:Status Margin="10,5" 
+                              DataContext="{Binding Status}"/>
             </StackPanel>
         </ScrollViewer>
     </DockPanel>
