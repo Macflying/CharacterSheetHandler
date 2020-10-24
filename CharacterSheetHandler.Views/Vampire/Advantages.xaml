@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:CharacterSheetHandler.Views.Vampire"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d">
     <UserControl.Resources>
         <Style TargetType="ListBox" BasedOn="{StaticResource SkillsList}" />
     </UserControl.Resources>
@@ -41,15 +40,15 @@
         </StackPanel>
 
         <!--Virtues-->
-        <StackPanel Grid.Row="1" Grid.Column="2">
+        <DockPanel Grid.Row="1" Grid.Column="2">
             <TextBlock Style="{StaticResource SubTitle}"
-                       Text="Virtues" />
-            <local:SkillGaugeWithHeader Header="Conscience/Conviction" />
-            <Line Style="{StaticResource BlankLine}" />
-            <local:SkillGaugeWithHeader Header="Self-Control/Instinct" />
-            <Line Style="{StaticResource BlankLine}" />
-            <local:SkillGaugeWithHeader Header="Courage" />
-        </StackPanel>
+                       Text="Virtues" DockPanel.Dock="Top"/>
+            <local:SkillGaugeWithHeader Header="Conscience/Conviction" DockPanel.Dock="Top"/>
+            <Line Style="{StaticResource BlankLine}" DockPanel.Dock="Top"/>
+            <local:SkillGaugeWithHeader Header="Self-Control/Instinct" DockPanel.Dock="Top"/>
+            <Line Style="{StaticResource BlankLine}" DockPanel.Dock="Top"/>
+            <local:SkillGaugeWithHeader Header="Courage" DockPanel.Dock="Top"/>
+        </DockPanel>
     </Grid>
 
 </UserControl>

@@ -7,11 +7,12 @@
         xmlns:viewModel="clr-namespace:CharacterSheetHandler.ViewModels;assembly=CharacterSheetHandler.ViewModels"
         xmlns:vampire="clr-namespace:CharacterSheetHandler.Views.Vampire"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        WindowState="Maximized">
     <Window.DataContext>
         <viewModel:MainViewModel />
     </Window.DataContext>
-    <Grid>
+    <Grid Margin="0,10">
         <vampire:VampireCharacterSheet DataContext="{Binding Context}"/>
     </Grid>
 </Window>

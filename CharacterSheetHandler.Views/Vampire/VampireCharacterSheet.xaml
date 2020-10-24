@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CharacterSheetHandler.Views.Vampire"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" >
     <DockPanel>
         <TextBlock HorizontalAlignment="Center"
                    Text="20th ANNIVERSARY EDITION"
@@ -23,18 +22,26 @@
                    FontSize="20" />
 
         <ScrollViewer Style="{StaticResource ScollViewer}">
-            <StackPanel>
-                <local:SheetHeader Margin="10,5"
+            <DockPanel>
+                <local:SheetHeader DockPanel.Dock="Top"
                                    DataContext="{Binding SheetHeader}"/>
-                <local:Attributes Margin="10,5"
+                <Line DockPanel.Dock="Top"
+                      Style="{StaticResource BlankLine}" />
+                <local:Attributes DockPanel.Dock="Top"
                                   DataContext="{Binding Attributes}"/>
-                <local:Abilities Margin="10,5"
+                <Line DockPanel.Dock="Top"
+                      Style="{StaticResource BlankLine}" />
+                <local:Abilities DockPanel.Dock="Top"
                                  DataContext="{Binding Abilities}"/>
-                <local:Advantages Margin="10,5" 
+                <Line DockPanel.Dock="Top"
+                      Style="{StaticResource BlankLine}" />
+                <local:Advantages DockPanel.Dock="Top"
                                   DataContext="{Binding Advantages}"/>
-                <local:Status Margin="10,5" 
+                <Line DockPanel.Dock="Top"
+                      Style="{StaticResource BlankLine}" />
+                <local:Status DockPanel.Dock="Top"
                               DataContext="{Binding Status}"/>
-            </StackPanel>
+            </DockPanel>
         </ScrollViewer>
     </DockPanel>
 </UserControl>

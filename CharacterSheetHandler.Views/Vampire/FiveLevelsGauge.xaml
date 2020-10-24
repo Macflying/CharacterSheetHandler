@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:converter="clr-namespace:CharacterSheetHandler.Views.Converters"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             mc:Ignorable="d"
              x:Name="FiveLevelsGaugeName">
     <UserControl.Resources>
         <Style TargetType="CheckBox" BasedOn="{StaticResource RoundedCheckBox}"/>
     </UserControl.Resources>
     <StackPanel Style="{StaticResource StackedGauge}">
+        <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=0}"
+                  Opacity="0.2" />
         <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=1}" />
         <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=2}" />
         <CheckBox IsChecked="{Binding ElementName=FiveLevelsGaugeName, Path=Level, Converter={x:Static converter:NumberToBoolConverter.SuperiorToTrue}, ConverterParameter=3}" />
