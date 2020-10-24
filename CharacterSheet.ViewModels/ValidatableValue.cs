@@ -66,6 +66,9 @@ namespace CharacterSheetHandler.ViewModels
             AutoValidation = autoValidation;
         }
 
+        /// <summary>
+        /// Validation(s) will happens at every change on the value.
+        /// </summary>
         public static ValidatableValue<T> AutoValidatingValue(IEnumerable<IValidationRule<T, string>> validationRules = null)
         {
             var vo = new ValidatableValue<T>(true);
@@ -74,6 +77,9 @@ namespace CharacterSheetHandler.ViewModels
             return vo;
         }
 
+        /// <summary>
+        /// Client must trigger validation(s) manually.
+        /// </summary>
         public static ValidatableValue<T> ManuallyValidatingValue(IEnumerable<IValidationRule<T, string>> validationRules = null)
         {
             var vo = new ValidatableValue<T>(false);
