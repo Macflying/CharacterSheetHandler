@@ -2,14 +2,9 @@
 
 using FsCheck;
 using FsCheck.Xunit;
-
-using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata;
-using System.Text;
+using FunctionalCSharp.Result;
 
 using Xunit;
-using Xunit.Sdk;
 
 namespace CharacterSheetHandler.Models.Tests.Vampire
 {
@@ -20,8 +15,8 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var result = Name.New(string.Empty);
 
-            Assert.IsType<Result<Name, NameError>.Error>(result);
-            _ = result is Result<Name, NameError>.Error er
+            Assert.IsType<Error<Name, NameError>>(result);
+            _ = result is Error<Name, NameError> er
                 ? (NameError.EmptyName)er
                 : throw new TestFailedException("Should be NameError.EmptyName");
         }
@@ -31,8 +26,8 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var result = Name.New(null);
 
-            Assert.IsType<Result<Name, NameError>.Error>(result);
-            _ = result is Result<Name, NameError>.Error er
+            Assert.IsType<Error<Name, NameError>>(result);
+            _ = result is Error<Name, NameError> er
                 ? (NameError.EmptyName)er
                 : throw new TestFailedException("Should be NameError.EmptyName");
         }
@@ -42,8 +37,8 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var result = Name.New("    ");
 
-            Assert.IsType<Result<Name, NameError>.Error>(result);
-            _ = result is Result<Name, NameError>.Error er
+            Assert.IsType<Error<Name, NameError>>(result);
+            _ = result is Error<Name, NameError> er
                 ? (NameError.EmptyName)er
                 : throw new TestFailedException("Should be NameError.EmptyName");
         }
@@ -53,8 +48,8 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var result = Name.New("Some veeeeeeeeery looooooooooong name");
 
-            Assert.IsType<Result<Name, NameError>.Error>(result);
-            _ = result is Result<Name, NameError>.Error er
+            Assert.IsType<Error<Name, NameError>>(result);
+            _ = result is Error<Name, NameError> er
                 ? (NameError.TooLongName)er
                 : throw new TestFailedException("Should be NameError.TooLongName");
         }
@@ -64,8 +59,8 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var result = Name.New(value.Get);
 
-            Assert.IsType<Result<Name, NameError>.Ok>(result);
-            var name = result is Result<Name, NameError>.Ok ok
+            Assert.IsType<Ok<Name, NameError>>(result);
+            var name = result is Ok<Name, NameError> ok
                 ? (Name)ok
                 : throw new TestFailedException("Should be Name");
 

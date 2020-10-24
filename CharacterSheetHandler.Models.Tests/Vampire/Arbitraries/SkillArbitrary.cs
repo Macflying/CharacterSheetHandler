@@ -1,7 +1,8 @@
 ﻿using CharacterSheetHandler.Models.Vampire;
 
 using FsCheck;
-
+using FunctionalCSharp.Result;
+using FunctionalCSharp.Tests;
 using Microsoft.FSharp.Core;
 
 namespace CharacterSheetHandler.Models.Tests.Vampire.Arbitraries
@@ -20,6 +21,6 @@ namespace CharacterSheetHandler.Models.Tests.Vampire.Arbitraries
 
         private static FSharpFunc<Name, FSharpFunc<Level, Skill>> ConvertToSkill =>
             FSharpFuncHelper.Create<Name, Level, Skill>
-            ((name, level) => (Result<Skill, SkillError>.Ok)Skill.New(name, level));
+            ((name, level) => (Ok<Skill, SkillError>)Skill.New(name, level));
     }
 }

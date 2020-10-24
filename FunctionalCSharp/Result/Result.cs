@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace FunctionalCSharp.Result
 {
+    /// <summary>
+    /// Wrap either a success or an error.
+    /// </summary>
+    /// <typeparam name="TSuccess">The success' type.</typeparam>
+    /// <typeparam name="TError">The error's type.</typeparam>
     public abstract class Result<TSuccess, TError>
     {
         internal Result()

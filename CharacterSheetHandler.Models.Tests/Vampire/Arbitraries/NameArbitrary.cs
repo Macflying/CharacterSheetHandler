@@ -1,6 +1,7 @@
 ﻿using CharacterSheetHandler.Models.Vampire;
 
 using FsCheck;
+using FunctionalCSharp.Result;
 
 namespace CharacterSheetHandler.Models.Tests.Vampire.Arbitraries
 {
@@ -13,7 +14,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire.Arbitraries
         }
 
         private static Name ConvertToName(NonNullOrWhiteSpacesStringMaxWithMaxLength name) =>
-            (Result<Name, NameError>.Ok)Name.New(name.Get);
+            (Ok<Name, NameError>)Name.New(name.Get);
 
         private static NonNullOrWhiteSpacesStringMaxWithMaxLength ConvertToString(Name name) =>
             new NonNullOrWhiteSpacesStringMaxWithMaxLength(name.Value);

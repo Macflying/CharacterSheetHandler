@@ -1,7 +1,7 @@
 ﻿using CharacterSheetHandler.Models.Vampire;
 
 using FsCheck;
-
+using FunctionalCSharp.Result;
 using Microsoft.FSharp.Core;
 
 using System;
@@ -32,7 +32,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire.Arbitraries
                 max = value.Item1.Get;
                 level = value.Item2.Get;
             }
-            return (Result<Level, LevelError>.Ok)Level.New(max, level);
+            return (Ok<Level, LevelError>)Level.New(max, level);
         }
 
         private static Tuple<PositiveInt, PositiveInt> ConvertFromLevel(Level level) =>

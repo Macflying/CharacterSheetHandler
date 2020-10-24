@@ -4,7 +4,11 @@ using System.Text;
 
 namespace FunctionalCSharp.Result
 {
-
+    /// <summary>
+    /// Wrap a success.
+    /// </summary>
+    /// <typeparam name="TSuccess">The success' type.</typeparam>
+    /// <typeparam name="TError">The error's type.</typeparam>
     public class Ok<TSuccess, TError> : Result<TSuccess, TError>
     {
         private TSuccess _content;

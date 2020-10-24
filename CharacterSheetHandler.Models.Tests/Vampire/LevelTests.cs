@@ -3,7 +3,7 @@ using CharacterSheetHandler.Models.Vampire;
 
 using FsCheck;
 using FsCheck.Xunit;
-
+using FunctionalCSharp.Result;
 using System.Reflection;
 
 using Xunit;
@@ -17,7 +17,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var result = Level.New(-maxLevel.Get, 0);
 
-            return (result is Result<Level, LevelError>.Error error && ((LevelError)error) is LevelError.NegativeOrZeroMaxLevelError)
+            return (result is Error<Level, LevelError> error && ((LevelError)error) is LevelError.NegativeOrZeroMaxLevelError)
                 .ToProperty();
         }
 
@@ -26,7 +26,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var result = Level.New(5, -level.Get);
 
-            return (result is Result<Level, LevelError>.Error error && ((LevelError)error) is LevelError.NegativeOrZeroLevelError)
+            return (result is Error<Level, LevelError> error && ((LevelError)error) is LevelError.NegativeOrZeroLevelError)
                 .ToProperty();
         }
 
@@ -35,8 +35,8 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var result = Level.New(maxLevel.Get, level.Get);
 
-            return (level.Get > maxLevel.Get && result is Result<Level, LevelError>.Error error && ((LevelError)error) is LevelError.LevelSupperiorToMaxError)
-                .Or(result is Result<Level, LevelError>.Ok ok && ((Level)ok).Max == maxLevel.Get && ((Level)ok).Value == level.Get);
+            return (level.Get > maxLevel.Get && result is Error<Level, LevelError> error && ((LevelError)error) is LevelError.LevelSupperiorToMaxError)
+                .Or(result is Ok<Level, LevelError> ok && ((Level)ok).Max == maxLevel.Get && ((Level)ok).Value == level.Get);
         }
     }
 }

@@ -3,6 +3,7 @@ using CharacterSheetHandler.Models.Vampire;
 
 using FsCheck;
 using FsCheck.Xunit;
+using FunctionalCSharp.Result;
 
 namespace CharacterSheetHandler.Models.Tests.Vampire
 {
@@ -13,7 +14,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var skill = Skill.New(name, level);
 
-            return (skill is Result<Skill, SkillError>.Ok ok
+            return (skill is Ok<Skill, SkillError> ok
                 && ((Skill)ok).Name == name
                 && ((Skill)ok).Level == level)
                 .ToProperty();
@@ -24,7 +25,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var skill = Skill.New(null, level);
 
-            return (skill is Result<Skill, SkillError>.Error error
+            return (skill is Error<Skill, SkillError> error
                 && (SkillError)error is SkillError.EmptyNameError)
                 .ToProperty();
         }
@@ -34,7 +35,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
         {
             var skill = Skill.New(name, null);
 
-            return (skill is Result<Skill, SkillError>.Error error
+            return (skill is Error<Skill, SkillError> error
                 && (SkillError)error is SkillError.NoLevelError)
                 .ToProperty();
         }

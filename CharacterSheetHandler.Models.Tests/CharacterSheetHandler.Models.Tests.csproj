@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CharacterSheetHandler.Models\CharacterSheetHandler.Models.csproj" />
+    <ProjectReference Include="..\FunctionalCSharp\FunctionalCSharp.csproj" />
   </ItemGroup>
 
 </Project>
