@@ -1,7 +1,7 @@
 ﻿using CharacterSheet.ViewModels;
 
 using CharacterSheetHandler.Models.Validations;
-
+using FunctionalCSharp.Option;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -95,9 +95,10 @@ namespace CharacterSheetHandler.ViewModels
         /// </summary>
         public bool Validate()
         {
-            Errors = new List<string>
-                    (ValidationRules.Where(v => !v.Validate(Value))
-                    .Select(v => v.Error).ToList());
+            Errors = new List<string>(
+                ValidationRules
+                .SelectOptional(v => v.Validate(Value))
+                .ToArray());
 
             RaisePropertyChanged(nameof(Errors));
             RaisePropertyChanged(nameof(FirstError));

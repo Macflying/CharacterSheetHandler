@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using FunctionalCSharp.Option;
 
 namespace CharacterSheetHandler.Models.Validations
 {
     public interface IValidationRule<TValue, TError>
     {
-        TError Error { get; }
-        bool Validate(TValue value);
+        Option<TError> Validate(TValue value);
     }
 }
