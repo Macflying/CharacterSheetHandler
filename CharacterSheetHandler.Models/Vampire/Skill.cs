@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FunctionalCSharp.Result;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -19,12 +20,12 @@ namespace CharacterSheetHandler.Models.Vampire
         public static Result<Skill, SkillError> New(Name name, Level level)
         {
             if (name == null)
-                return Error.Value<Skill, SkillError>(SkillError.EmptyName);
+                return Error<Skill, SkillError>.Value(SkillError.EmptyName);
 
             if (level == null)
-                return Error.Value<Skill, SkillError>(SkillError.NoLevel);
+                return Error<Skill, SkillError>.Value(SkillError.NoLevel);
 
-            return Ok.Value<Skill, SkillError>(new Skill(name, level));
+            return Ok<Skill, SkillError>.Value(new Skill(name, level));
         }
 
         public override bool Equals(object obj)

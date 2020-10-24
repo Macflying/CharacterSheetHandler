@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CharacterSheetHandler.DTOs\CharacterSheetHandler.DTOs.csproj" />
+    <ProjectReference Include="..\FunctionalCSharp\FunctionalCSharp.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@
 
 using System;
 
-namespace CharacterSheetHandler.Models.Tests
+namespace FunctionalCSharp.Tests
 {
     public static class FSharpFuncHelper
     {

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Security.Cryptography.X509Certificates;
+
+using FunctionalCSharp.Result;
 
 namespace CharacterSheetHandler.Models.Vampire
 {
@@ -20,15 +21,15 @@ namespace CharacterSheetHandler.Models.Vampire
         public static Result<Level, LevelError> New(int max, int value)
         {
             if (max <= 0)
-                return Error.Value<Level, LevelError>(LevelError.NegativeOrZeroMaxLevel);
+                return Error<Level, LevelError>.Value(LevelError.NegativeOrZeroMaxLevel);
 
             if (value <= 0)
-                return Error.Value<Level, LevelError>(LevelError.NegativeOrZeroLevel);
+                return Error<Level, LevelError>.Value(LevelError.NegativeOrZeroLevel);
 
             if (value > max)
-                return Error.Value<Level, LevelError>(LevelError.LevelSupperiorToMax);
+                return Error<Level, LevelError>.Value(LevelError.LevelSupperiorToMax);
 
-            return Ok.Value<Level, LevelError>(new Level(max, value));
+            return Ok<Level, LevelError>.Value(new Level(max, value));
         }
 
         public override bool Equals(object obj) =>

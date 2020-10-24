@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FunctionalCSharp.Result;
+using System;
 using System.Collections.Generic;
 
 namespace CharacterSheetHandler.Models.Vampire
@@ -19,13 +20,13 @@ namespace CharacterSheetHandler.Models.Vampire
         public static Result<Physical, PhysicalError>New(Level strength, Level dexterity, Level stamina)
         {
             if (strength == null)
-                return Error.Value<Physical, PhysicalError>(PhysicalError.NoStrength);
+                return Error<Physical, PhysicalError>.Value(PhysicalError.NoStrength);
             if (dexterity == null)
-                return Error.Value<Physical, PhysicalError>(PhysicalError.NoDexterity);
+                return Error<Physical, PhysicalError>.Value(PhysicalError.NoDexterity);
             if (stamina == null)
-                return Error.Value<Physical, PhysicalError>(PhysicalError.NoStamina);
+                return Error<Physical, PhysicalError>.Value(PhysicalError.NoStamina);
 
-            return Ok.Value<Physical, PhysicalError>(new Physical(strength, dexterity, stamina));
+            return Ok<Physical, PhysicalError>.Value(new Physical(strength, dexterity, stamina));
         }
 
         public override bool Equals(object obj) =>

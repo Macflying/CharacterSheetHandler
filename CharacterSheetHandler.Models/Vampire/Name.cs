@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FunctionalCSharp.Result;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -13,12 +14,12 @@ namespace CharacterSheetHandler.Models.Vampire
         public static Result<Name, NameError> New(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
-                return Error.Value<Name, NameError>(NameError.Empty);
+                return Error<Name, NameError>.Value(NameError.Empty);
 
             if (name.Length > Constants.NameLength)
-                return Error.Value<Name, NameError>(NameError.TooLong);
+                return Error<Name, NameError>.Value(NameError.TooLong);
 
-            return Ok.Value<Name, NameError>(new Name(name));
+            return Ok<Name, NameError>.Value(new Name(name));
         }
 
         public override bool Equals(object obj) =>
