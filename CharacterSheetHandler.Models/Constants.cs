@@ -1,5 +1,5 @@
 ﻿
-namespace CharacterSheetHandler.Models.Vampire
+namespace CharacterSheetHandler.Models
 {
     public static class Constants
     {
