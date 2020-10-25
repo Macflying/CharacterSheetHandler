@@ -2,7 +2,6 @@
 
 using CharacterSheetHandler.Models.Validations;
 using FunctionalCSharp.Option;
-using Microsoft.Data.Edm.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,9 +13,16 @@ namespace CharacterSheetHandler.ViewModels
     /// Class that can notify a view of changes to a value and errors linked to that value.
     /// </summary>
     /// <typeparam name="T">Le type de l'objet pouvant être validé.</typeparam>
-    public class ValidatableValue<T> : ViewModelBase, IEquatable<ValidatableValue<T>>
+    public class ValidatableValue<T> : IValidatableObject, IEquatable<ValidatableValue<T>>
         where T : IEquatable<T>
     {
+        private readonly ViewModelBase _viewModel = new ViewModelBase();
+
+        /// <summary>
+        /// Should validation happens at every changes to the value ?
+        /// </summary>
+        private bool AutoValidation { get; }
+
         #region Value
 
         private T _innerValue;
@@ -27,17 +33,12 @@ namespace CharacterSheetHandler.ViewModels
             { return _innerValue; }
             set
             {
-                if (SetValue(ref _innerValue, value) && AutoValidation)
+                if (_viewModel.SetValue(ref _innerValue, value) && AutoValidation)
                     Validate();
             }
         }
 
         #endregion Value
-
-        /// <summary>
-        /// Should validation happens at every changes to the value ?
-        /// </summary>
-        private bool AutoValidation { get; }
 
         #region IsValid
 
@@ -46,25 +47,22 @@ namespace CharacterSheetHandler.ViewModels
         public bool IsValid
         {
             get { return _isValid; }
-            private set { SetValue(ref _isValid, value); }
+            private set { _viewModel.SetValue(ref _isValid, value); }
         }
 
         #endregion IsValid
-
-        public List<IValidationRule<T, string>> ValidationRules { get; } = new List<IValidationRule<T, string>>();
 
         #region Errors
 
         private List<string> _errors = new List<string>();
 
-        public IEnumerable<string> Errors
-        {
-            get; private set;
-        }
+        public IEnumerable<string> Errors => _errors;
 
-        public string FirstError { get { return Errors?.FirstOrDefault(); } }
+        public string FirstError { get { return Errors.FirstOrDefault(); } }
 
         #endregion Errors
+
+        public List<IValidationRule<T, string>> ValidationRules { get; } = new List<IValidationRule<T, string>>();
 
         #region Factory
 
@@ -102,13 +100,15 @@ namespace CharacterSheetHandler.ViewModels
         /// </summary>
         public bool Validate()
         {
-            Errors = new List<string>(
+            _errors.Clear();
+
+            _errors.AddRange(
                 ValidationRules
                 .SelectOptional(v => v.Validate(Value))
                 .ToArray());
 
-            RaisePropertyChanged(nameof(Errors));
-            RaisePropertyChanged(nameof(FirstError));
+            _viewModel.RaisePropertyChanged(nameof(Errors));
+            _viewModel.RaisePropertyChanged(nameof(FirstError));
 
             IsValid = !Errors.Any();
 
@@ -173,6 +173,12 @@ namespace CharacterSheetHandler.ViewModels
             return Value?.ToString();
         }
 
+        /// <summary>
+        /// Implementation for <see cref="IValidatableObject"/>.
+        /// returns <see cref="Errors"/> as an enumeration of <see cref="ValidationResult"/>.
+        /// </summary>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+            => Errors.Select(e => new ValidationResult(e));
 
         public static implicit operator T(ValidatableValue<T> vo) => vo.Value;
     }
