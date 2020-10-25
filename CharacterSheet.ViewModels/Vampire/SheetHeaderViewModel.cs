@@ -1,4 +1,5 @@
-﻿using CharacterSheetHandler.Models.Validations;
+﻿using CharacterSheetHandler.Models;
+using CharacterSheetHandler.Models.Validations;
 using CharacterSheetHandler.Models.Vampire;
 
 using System.Collections.Generic;
