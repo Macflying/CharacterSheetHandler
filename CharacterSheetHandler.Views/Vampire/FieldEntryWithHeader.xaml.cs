@@ -37,7 +37,8 @@ namespace CharacterSheetHandler.Views.Vampire
 
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register(
-            nameof(Text), typeof(string),
+            nameof(Text),
+            typeof(string),
             typeof(FieldEntryWithHeader));
 
         public string Text

@@ -25,39 +25,39 @@
 
         <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="0"
                                     Header="Name:"
-                                    Text="{Binding Name}"/>
+                                    Text="{Binding Name.Value, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="1"
                                     Header="Player:"
-                                    Text="{Binding Player}"/>
+                                    Text="{Binding Player.Value, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="2"
                                     Header="Chronicle:"
-                                    Text="{Binding Chronicle}"/>
+                                    Text="{Binding Chronicle, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="0"
                                     Header="Nature:"
-                                    Text="{Binding Nature}"/>
+                                    Text="{Binding Nature, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="1"
                                     Header="Demeanor:"
-                                    Text="{Binding Demeanor}"/>
+                                    Text="{Binding Demeanor, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="2"
                                     Header="Concept:"
-                                    Text="{Binding Concept}"/>
+                                    Text="{Binding Concept, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="0"
                                     Header="Clan:"
-                                    Text="{Binding Clan}"/>
+                                    Text="{Binding Clan, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="1"
                                     Header="Generation:"
-                                    Text="{Binding Generation}"/>
+                                    Text="{Binding Generation, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="2"
                                     Header="Sire:"
-                                    Text="{Binding Sire}"/>
+                                    Text="{Binding Sire, Mode=TwoWay}"/>
     </Grid>
 
 </UserControl>

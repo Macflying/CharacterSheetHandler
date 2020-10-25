@@ -2,8 +2,10 @@
 
 using CharacterSheetHandler.Models.Validations;
 using FunctionalCSharp.Option;
+using Microsoft.Data.Edm.Validation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace CharacterSheetHandler.ViewModels
@@ -21,8 +23,13 @@ namespace CharacterSheetHandler.ViewModels
 
         public T Value
         {
-            get { return _innerValue; }
-            set { if (SetValue(ref _innerValue, value) && AutoValidation) Validate(); }
+            get
+            { return _innerValue; }
+            set
+            {
+                if (SetValue(ref _innerValue, value) && AutoValidation)
+                    Validate();
+            }
         }
 
         #endregion Value
@@ -165,6 +172,7 @@ namespace CharacterSheetHandler.ViewModels
         {
             return Value?.ToString();
         }
+
 
         public static implicit operator T(ValidatableValue<T> vo) => vo.Value;
     }

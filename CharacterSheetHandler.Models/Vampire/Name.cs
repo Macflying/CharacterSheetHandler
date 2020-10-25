@@ -22,6 +22,7 @@ namespace CharacterSheetHandler.Models.Vampire
             return Ok<Name, NameError>.Value(new Name(name));
         }
 
+        #region Equals
         public override bool Equals(object obj) =>
             Equals(obj as Name);
 
@@ -40,6 +41,7 @@ namespace CharacterSheetHandler.Models.Vampire
 
         public static bool operator !=(Name left, Name right) =>
             !(left == right);
+        #endregion Equals
     }
 
     public abstract class NameError
@@ -47,8 +49,8 @@ namespace CharacterSheetHandler.Models.Vampire
         private NameError()
         { }
 
-        public static EmptyName Empty => new EmptyName();
-        public static TooLongName TooLong => new TooLongName();
+        internal static EmptyName Empty => new EmptyName();
+        internal static TooLongName TooLong => new TooLongName();
         public class EmptyName : NameError
         { }
         public class TooLongName : NameError
