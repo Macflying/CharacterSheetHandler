@@ -4,7 +4,6 @@ using CharacterSheetHandler.Models.Validations;
 using FunctionalCSharp.Option;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace CharacterSheetHandler.ViewModels
@@ -13,7 +12,7 @@ namespace CharacterSheetHandler.ViewModels
     /// Class that can notify a view of changes to a value and errors linked to that value.
     /// </summary>
     /// <typeparam name="T">Le type de l'objet pouvant être validé.</typeparam>
-    public class ValidatableValue<T> : IValidatableObject, IEquatable<ValidatableValue<T>>
+    public class ValidatableValue<T> : IEquatable<ValidatableValue<T>>
         where T : IEquatable<T>
     {
         private readonly ViewModelBase _viewModel = new ViewModelBase();
@@ -172,13 +171,6 @@ namespace CharacterSheetHandler.ViewModels
         {
             return Value?.ToString();
         }
-
-        /// <summary>
-        /// Implementation for <see cref="IValidatableObject"/>.
-        /// returns <see cref="Errors"/> as an enumeration of <see cref="ValidationResult"/>.
-        /// </summary>
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-            => Errors.Select(e => new ValidationResult(e));
 
         public static implicit operator T(ValidatableValue<T> vo) => vo.Value;
     }

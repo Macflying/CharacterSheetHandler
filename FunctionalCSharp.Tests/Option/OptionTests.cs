@@ -18,7 +18,7 @@ namespace FunctionalCSharp.Tests.Option
         [Fact]
         public void None_Is_Option()
         {
-            Assert.IsAssignableFrom<Option<int>>(None.Value);
+            Assert.IsAssignableFrom<Option<int>>(new None<int>());
         }
 
         [Fact]

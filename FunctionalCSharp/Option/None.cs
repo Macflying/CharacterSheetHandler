@@ -1,4 +1,7 @@
-﻿namespace FunctionalCSharp.Option
+﻿using System;
+using System.Threading;
+
+namespace FunctionalCSharp.Option
 {
     /// <summary>
     /// Represent the absence of a value.
@@ -6,10 +9,33 @@
     /// <typeparam name="T"></typeparam>
     public class None<T> : Option<T>
     {
+        public override Option<TResult> Map<TResult>(Func<T, TResult> map)
+        {
+            if (map is null)
+                throw new ArgumentNullException(nameof(map));
+
+            return None.Value;
+        }
+
+        public override void WhenSome(Action<T> doThat)
+        {
+            if (doThat is null)
+                throw new ArgumentNullException(nameof(doThat));
+        }
+
+        public override T Reduce(T whenNone) => whenNone;
+
+        public override T Reduce(Func<T> whenNone)
+        {
+            if (whenNone is null)
+                throw new ArgumentNullException(nameof(whenNone));
+
+            return whenNone();
+        }
     }
 
     /// <summary>
-    /// Helper class to create None value.
+    /// Helper class to create None value whithout having to specify type.
     /// </summary>
     public class None
     {

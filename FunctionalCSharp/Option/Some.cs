@@ -1,4 +1,6 @@
-﻿namespace FunctionalCSharp.Option
+﻿using System;
+
+namespace FunctionalCSharp.Option
 {
     /// <summary>
     /// Wrap an existing value.
@@ -9,22 +11,49 @@
         /// <summary>
         /// The contained value.
         /// </summary>
-        public T Content { get; }
+        private readonly T _content;
 
-        private Some(T content) => Content = content;
+        private Some(T content) => _content = content;
 
         /// <summary>
-        /// Create Some if the value exists, will returns None if it dopesn't.
+        /// Create Some if the <paramref name="value"/> is not null, will returns None if it dopesn't.
         /// </summary>
         /// <param name="value">The value to wrap.</param>
         public static Option<T> Value(T value)
         {
-            if (value != null)
-                return new Some<T>(value);
-            return None.Value;
+            if (value is null)
+                return None.Value;
+
+            return new Some<T>(value);
+        }
+
+        public override Option<TResult> Map<TResult>(Func<T, TResult> map)
+        {
+            if (map is null)
+                throw new ArgumentNullException(nameof(map));
+
+            return Some<TResult>.Value(map(_content));
+        }
+
+        public override void WhenSome(Action<T> doThat)
+        {
+            if (doThat is null)
+                throw new ArgumentNullException(nameof(doThat));
+
+            doThat(_content);
+        }
+
+        public override T Reduce(T whenNone) => _content;
+
+        public override T Reduce(Func<T> whenNone)
+        {
+            if (whenNone is null)
+                throw new ArgumentNullException(nameof(whenNone));
+
+            return _content;
         }
 
         public static implicit operator T(Some<T> value) =>
-            value.Content;
+            value._content;
     }
 }

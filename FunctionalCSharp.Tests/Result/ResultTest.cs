@@ -29,10 +29,10 @@ namespace FunctionalCSharp.Tests.Result
         }
 
         [Property]
-        public Property IfErrorHodlsValue_CanRetrieveIt(string value)
+        public Property IfErrorHodlsValue_CanRetrieveIt(NonNull<string> value)
         {
-            Result<DateTime, string> rslt = Error<DateTime, string>.Value(value);
-            return (rslt is Error<DateTime, string> error && error == value).ToProperty();
+            Result<DateTime, string> rslt = Error<DateTime, string>.Value(value.Get);
+            return (rslt is Error<DateTime, string> error && error == value.Get).ToProperty();
         }
     }
 }
