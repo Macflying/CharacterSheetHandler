@@ -6,6 +6,10 @@
              xmlns:local="clr-namespace:CharacterSheetHandler.Views.Vampire"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource EntryHeaderTextBlock}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource OneLineEntry}"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.Resources>
             <Style TargetType="RowDefinition">
@@ -23,9 +27,15 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="0"
+        <DockPanel Grid.Column="0" Grid.Row="0">
+            <TextBlock Text="Name"
+                       DockPanel.Dock="Left"/>
+            <TextBox DataContext="{Binding Name}"/>
+        </DockPanel>
+        
+        <!--<local:FieldEntryWithHeader Grid.Column="0" Grid.Row="0"
                                     Header="Name:"
-                                    Text="{Binding Name.Value, Mode=TwoWay}"/>
+                                    Text="{Binding Name.Value, Mode=TwoWay}"/>-->
 
         <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="1"
                                     Header="Player:"
@@ -33,31 +43,31 @@
 
         <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="2"
                                     Header="Chronicle:"
-                                    Text="{Binding Chronicle, Mode=TwoWay}"/>
+                                    Text="{Binding Chronicle.Value, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="0"
                                     Header="Nature:"
-                                    Text="{Binding Nature, Mode=TwoWay}"/>
+                                    Text="{Binding Nature.Value, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="1"
                                     Header="Demeanor:"
-                                    Text="{Binding Demeanor, Mode=TwoWay}"/>
+                                    Text="{Binding Demeanor.Value, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="2"
                                     Header="Concept:"
-                                    Text="{Binding Concept, Mode=TwoWay}"/>
+                                    Text="{Binding Concept.Value, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="0"
                                     Header="Clan:"
-                                    Text="{Binding Clan, Mode=TwoWay}"/>
+                                    Text="{Binding Clan.Value, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="1"
                                     Header="Generation:"
-                                    Text="{Binding Generation, Mode=TwoWay}"/>
+                                    Text="{Binding Generation.Value, Mode=TwoWay}"/>
 
         <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="2"
                                     Header="Sire:"
-                                    Text="{Binding Sire, Mode=TwoWay}"/>
+                                    Text="{Binding Sire.Value, Mode=TwoWay}"/>
     </Grid>
 
 </UserControl>

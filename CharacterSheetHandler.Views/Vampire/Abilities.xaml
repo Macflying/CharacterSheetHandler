@@ -30,21 +30,21 @@
         <StackPanel Grid.Row="1" Grid.Column="0">
             <TextBlock Style="{StaticResource SubTitle}"
                        Text="Talents" />
-            <ListBox ItemsSource="{Binding}" />
+            <ListBox ItemsSource="{Binding Talents}" />
         </StackPanel>
 
         <!--Skills-->
         <StackPanel Grid.Row="1" Grid.Column="1">
             <TextBlock Style="{StaticResource SubTitle}"
                        Text="Skills" />
-            <ListBox ItemsSource="{Binding}" />
+            <ListBox ItemsSource="{Binding Skills}" />
         </StackPanel>
 
         <!--Knowledges-->
         <StackPanel Grid.Row="1" Grid.Column="2">
             <TextBlock Style="{StaticResource SubTitle}"
                        Text="Knowledges" />
-            <ListBox ItemsSource="{Binding}" />
+            <ListBox ItemsSource="{Binding Knowledges}" />
         </StackPanel>
     </Grid>
 </UserControl>

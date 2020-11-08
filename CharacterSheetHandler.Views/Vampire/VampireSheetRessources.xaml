@@ -27,7 +27,7 @@
             <Setter.Value>
                 <DataTemplate>
                     <local:SkillGaugeWithHeader Header="{Binding Name}"
-                                                Level="{Binding Level}" />
+                                                Level="{Binding Level.Value}" />
                 </DataTemplate>
             </Setter.Value>
         </Setter>

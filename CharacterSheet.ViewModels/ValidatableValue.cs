@@ -3,7 +3,10 @@
 using CharacterSheetHandler.Models.Validations;
 using FunctionalCSharp.Option;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace CharacterSheetHandler.ViewModels
@@ -12,8 +15,7 @@ namespace CharacterSheetHandler.ViewModels
     /// Class that can notify a view of changes to a value and errors linked to that value.
     /// </summary>
     /// <typeparam name="T">Le type de l'objet pouvant être validé.</typeparam>
-    public class ValidatableValue<T> : IEquatable<ValidatableValue<T>>
-        where T : IEquatable<T>
+    public class ValidatableValue<T> : INotifyDataErrorInfo, IEquatable<ValidatableValue<T>>
     {
         private readonly ViewModelBase _viewModel = new ViewModelBase();
 
@@ -39,23 +41,18 @@ namespace CharacterSheetHandler.ViewModels
 
         #endregion Value
 
-        #region IsValid
-
-        private bool _isValid = true;
-
-        public bool IsValid
+        #region Errors
+        public bool HasErrors
         {
-            get { return _isValid; }
-            private set { _viewModel.SetValue(ref _isValid, value); }
+            get { return _errors.Any(); }
         }
 
-        #endregion IsValid
-
-        #region Errors
+        public IEnumerable GetErrors(string propertyName)
+            => _errors.ToArray();
 
         private List<string> _errors = new List<string>();
 
-        public IEnumerable<string> Errors => _errors;
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
         public string FirstError { get { return Errors.FirstOrDefault(); } }
 
@@ -106,12 +103,11 @@ namespace CharacterSheetHandler.ViewModels
                 .SelectOptional(v => v.Validate(Value))
                 .ToArray());
 
+            ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(Value)));
             _viewModel.RaisePropertyChanged(nameof(Errors));
             _viewModel.RaisePropertyChanged(nameof(FirstError));
 
-            IsValid = !Errors.Any();
-
-            return IsValid;
+            return !HasErrors;
         }
 
         #region Equality

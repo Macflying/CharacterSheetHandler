@@ -2,6 +2,8 @@
 {
     public class SkillViewModel
     {
-        ValidatableValue<int> Level { get; } = ValidatableValue<int>.AutoValidatingValue();
+        public string Name { get; } = "Academics";
+        public ValidatableValue<int> Level { get; } = ValidatableValue<int>.AutoValidatingValue();
+        public int MaxLevel { get; } = 5;
     }
 }
