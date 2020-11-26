@@ -54,9 +54,10 @@ namespace FunctionalCSharp.Option
             if (sequence is null)
                 throw new ArgumentNullException(nameof(sequence));
 
-            return sequence
-                .FirstOrDefault(predicate)
-                .When(item => !(item is null));
+            foreach (T item in sequence.Where(predicate))
+                return Some<T>.Value(item);
+
+            return None.Value;
         }
     }
 }
