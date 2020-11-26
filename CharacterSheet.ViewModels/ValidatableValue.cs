@@ -1,5 +1,5 @@
 ﻿using CharacterSheet.ViewModels;
-
+using CharacterSheetHandler.Models.CollectionExtensions;
 using CharacterSheetHandler.Models.Validations;
 using FunctionalCSharp.Option;
 using System;
@@ -42,30 +42,19 @@ namespace CharacterSheetHandler.ViewModels
         #endregion Value
 
         #region Errors
-        public bool HasErrors
-        {
-            get { return _errors.Any(); }
-        }
-
-        public IEnumerable GetErrors(string propertyName)
-            => _errors.ToArray();
-
         private List<string> _errors = new List<string>();
 
+        public bool HasErrors => _errors.Any();
+
+        public IEnumerable GetErrors(string propertyName) => _errors;
+
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
-
-        public string FirstError { get { return Errors.FirstOrDefault(); } }
-
         #endregion Errors
 
-        public List<IValidationRule<T, string>> ValidationRules { get; } = new List<IValidationRule<T, string>>();
+        public IList<IValidationRule<T, string>> ValidationRules { get; } = new List<IValidationRule<T, string>>();
 
         #region Factory
-
-        private ValidatableValue(bool autoValidation)
-        {
-            AutoValidation = autoValidation;
-        }
+        private ValidatableValue(bool autoValidation) => AutoValidation = autoValidation;
 
         /// <summary>
         /// Validation(s) will happens at every change on the value.
@@ -88,7 +77,6 @@ namespace CharacterSheetHandler.ViewModels
                 vo.ValidationRules.AddRange(validationRules);
             return vo;
         }
-
         #endregion Factory
 
         /// <summary>
@@ -100,12 +88,9 @@ namespace CharacterSheetHandler.ViewModels
 
             _errors.AddRange(
                 ValidationRules
-                .SelectOptional(v => v.Validate(Value))
-                .ToArray());
+                .SelectOptional(v => v.Validate(Value)));
 
             ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(Value)));
-            _viewModel.RaisePropertyChanged(nameof(Errors));
-            _viewModel.RaisePropertyChanged(nameof(FirstError));
 
             return !HasErrors;
         }
@@ -163,10 +148,7 @@ namespace CharacterSheetHandler.ViewModels
         }
         #endregion Equality
 
-        public override string ToString()
-        {
-            return Value?.ToString();
-        }
+        public override string ToString() => Value?.ToString();
 
         public static implicit operator T(ValidatableValue<T> vo) => vo.Value;
     }
