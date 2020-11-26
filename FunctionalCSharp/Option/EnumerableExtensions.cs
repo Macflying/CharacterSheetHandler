@@ -29,5 +29,34 @@ namespace FunctionalCSharp.Option
                 .OfType<Some<TResult>>()
                 .Select(some => some.Reduce(() => throw new InvalidOperationException($"{nameof(SelectOptional)}: Some should never have to reduce a None value.")));
         }
+
+        /// <summary>
+        /// Returns the first element of the <paramref name="sequence"/>.
+        /// None if the <paramref name="sequence"/> is empty.
+        /// </summary>
+        /// <typeparam name="T">The sequence's elements' type.</typeparam>
+        /// <param name="sequence">The sequence to reduce to one element.</param>
+        /// <exception cref="ArgumentNullException"/>
+        public static Option<T> FirstOrNone<T>(this IEnumerable<T> sequence)
+            => sequence
+            .FirstOrNone(item => true);
+
+        /// <summary>
+        /// Returns the first element of the <paramref name="sequence"/> that passes the <paramref name="predicate"/>.
+        /// None otherwise or if the <paramref name="sequence"/> is empty.
+        /// </summary>
+        /// <typeparam name="T">The sequence's elements' type.</typeparam>
+        /// <param name="sequence">The sequence to reduce to one element.</param>
+        /// <param name="predicate">The predicate to filter the elements.</param>
+        /// <exception cref="ArgumentNullException"/>
+        public static Option<T> FirstOrNone<T>(this IEnumerable<T> sequence, Func<T, bool> predicate)
+        {
+            if (sequence is null)
+                throw new ArgumentNullException(nameof(sequence));
+
+            return sequence
+                .FirstOrDefault(predicate)
+                .When(item => !(item is null));
+        }
     }
 }
