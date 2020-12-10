@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CharacterSheetHandler.Views.Resources">
+
+    <!--#region Error notification -->
+    <SolidColorBrush x:Key="Error" Color="Red"/>
+    <SolidColorBrush x:Key="Warning" Color="Orange"/>
+    <!--#endregion Error notification -->
+
+    <!--#region Text entry -->
+    <SolidColorBrush x:Key="TextWhileWriting" Color="Black"/>
+    <SolidColorBrush x:Key="NonFocusedText" Color="DarkSlateGray"/>
+    <SolidColorBrush x:Key="BackgroundEntry" Color="Transparent"/>
+    <!--#endregion Text entry -->
+
+    <!--#region Non-entry text -->
+    <SolidColorBrush x:Key="InformativeText" Color="DarkGray"/>
+    <!--#endregion Non-entry text -->
+</ResourceDictionary>

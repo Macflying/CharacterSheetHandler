@@ -2,6 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converter="clr-namespace:CharacterSheetHandler.Views.Converters">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
     <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
 
     <!--#region ScrollViewer-->
@@ -45,9 +49,9 @@
     <!--TextBox-->
     <Style TargetType="TextBox" x:Key="OneLineEntry">
         <Setter Property="Margin" Value="5,2" />
-        <Setter Property="Foreground" Value="DarkSlateGray" />
+        <Setter Property="Foreground" Value="{StaticResource NonFocusedText}" />
         <Setter Property="FontSize" Value="16" />
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Background" Value="{StaticResource BackgroundEntry}" />
         <Setter Property="TextAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -61,15 +65,15 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsFocused" Value="True">
-                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Foreground" Value="{StaticResource TextWhileWriting}" />
             </Trigger>
             <DataTrigger Binding="{Binding HasErrors}" Value="True">
-                <Setter Property="Foreground" Value="Red"/>
+                <Setter Property="Foreground" Value="{StaticResource Error}"/>
                 <Setter Property="ToolTip">
                     <Setter.Value>
                         <ToolTip >
                             <TextBlock Text="{Binding FirstError}"
-                                       Foreground="Red"
+                                       Foreground="{StaticResource Error}"
                                        Padding="2"/>
                         </ToolTip>
                     </Setter.Value>
@@ -110,7 +114,7 @@
     <!--PlaceHolderTextBlock-->
     <Style TargetType="TextBlock" x:Key="PlaceHolderTextBlock">
         <Setter Property="Margin" Value="0,2" />
-        <Setter Property="Foreground" Value="DarkGray" />
+        <Setter Property="Foreground" Value="{StaticResource InformativeText}" />
         <Setter Property="FontSize" Value="16" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="TextAlignment" Value="Center" />
