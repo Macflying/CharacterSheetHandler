@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace CharacterSheetHandler.ViewModels.Vampire
@@ -11,7 +12,6 @@ namespace CharacterSheetHandler.ViewModels.Vampire
 
         public AbilitiesViewModel()
         {
-            Knowledges.Add(new SkillViewModel());
         }
     }
 }

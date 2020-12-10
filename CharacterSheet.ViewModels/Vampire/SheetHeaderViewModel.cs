@@ -1,4 +1,5 @@
 ﻿using CharacterSheetHandler.Models;
+using CharacterSheetHandler.Models.CollectionExtensions;
 using CharacterSheetHandler.Models.Validations;
 using CharacterSheetHandler.Models.Vampire;
 
@@ -9,56 +10,59 @@ namespace CharacterSheetHandler.ViewModels.Vampire
 {
     public class SheetHeaderViewModel
     {
-        private readonly string _nullOrWhiteSpaceStringError = "Field shouldn't be left empty or consisting of only white spaces.";
+        public ValidatableValue<string> Name { get; } = ValidatableValue<string>.AutoValidatingValue();
+        public ValidatableValue<string> Player { get; } = ValidatableValue<string>.AutoValidatingValue();
+        public ValidatableValue<string> Chronicle { get; } = ValidatableValue<string>.AutoValidatingValue();
 
-        public ValidatableValue<string> Name { get; private set; }
-        public ValidatableValue<string> Player { get; private set; }
-        public ValidatableValue<string> Chronicle { get; private set; }
+        public ValidatableValue<string> Nature { get; } = ValidatableValue<string>.AutoValidatingValue();
+        public ValidatableValue<string> Demeanor { get; } = ValidatableValue<string>.AutoValidatingValue();
+        public ValidatableValue<string> Concept { get; } = ValidatableValue<string>.AutoValidatingValue();
 
-        public ValidatableValue<string> Nature { get; private set; }
-        public ValidatableValue<string> Demeanor { get; private set; }
-        public ValidatableValue<string> Concept { get; private set; }
-
-        public ValidatableValue<string> Clan { get; private set; }
-        public ValidatableValue<string> Sire { get; private set; }
-        public ValidatableValue<string> Generation { get; private set; }
+        public ValidatableValue<string> Clan { get; } = ValidatableValue<string>.AutoValidatingValue();
+        public ValidatableValue<string> Sire { get; } = ValidatableValue<string>.AutoValidatingValue();
+        public ValidatableValue<string> Generation { get; } = ValidatableValue<string>.AutoValidatingValue();
 
         public SheetHeaderViewModel()
         {
             SetDefaultValidationRules();
 
-            SetDefaultValue();
+            SetDefaultValues();
         }
 
         private void SetDefaultValidationRules()
         {
-            var nameValidations = new List<IValidationRule<string, string>>();
-            nameValidations.Add(
-                new ErrorToStringValidationDecorator<string, NameError, string>
-                (
+            var nameValidations = new ErrorToStringValidationDecorator<string, NameError, string>(
                     MapNameError,
-                    new StringToNameValidation()
-                ));
+                    new StringToNameValidation());
 
-            var nonNullOrWhiteSpaceStringValidation = new List<IValidationRule<string, string>>();
-            nonNullOrWhiteSpaceStringValidation.Add(
-                new NonNullOrWhiteSpaceStringValidation<string>(
-                    _nullOrWhiteSpaceStringError));
+            var nonNullOrWhiteSpaceStringValidation = new NonNullOrWhiteSpaceStringValidation<string>(
+                    ErrorsMessages.NullOrWhiteSpaceStringError);
 
-            Name = ValidatableValue<string>.AutoValidatingValue(nameValidations);
-            Player = ValidatableValue<string>.AutoValidatingValue(nameValidations);
-            Chronicle = ValidatableValue<string>.AutoValidatingValue(nonNullOrWhiteSpaceStringValidation);
+            Name.ValidationRules.Add(nameValidations);
+            Player.ValidationRules.Add(nameValidations);
+            Chronicle.ValidationRules.Add(nonNullOrWhiteSpaceStringValidation);
 
-            Nature = ValidatableValue<string>.AutoValidatingValue(nonNullOrWhiteSpaceStringValidation);
-            Demeanor = ValidatableValue<string>.AutoValidatingValue(nonNullOrWhiteSpaceStringValidation);
-            Concept = ValidatableValue<string>.AutoValidatingValue(nonNullOrWhiteSpaceStringValidation);
+            Nature.ValidationRules.Add(nonNullOrWhiteSpaceStringValidation);
+            Demeanor.ValidationRules.Add(nonNullOrWhiteSpaceStringValidation);
+            Concept.ValidationRules.Add(nonNullOrWhiteSpaceStringValidation);
 
-            Clan = ValidatableValue<string>.AutoValidatingValue(nonNullOrWhiteSpaceStringValidation);
-            Generation = ValidatableValue<string>.AutoValidatingValue(nonNullOrWhiteSpaceStringValidation);
-            Sire = ValidatableValue<string>.AutoValidatingValue(nonNullOrWhiteSpaceStringValidation);
+            Clan.ValidationRules.Add(nonNullOrWhiteSpaceStringValidation);
+            Generation.ValidationRules.Add(nonNullOrWhiteSpaceStringValidation);
+            Sire.ValidationRules.Add(nonNullOrWhiteSpaceStringValidation);
         }
 
-        private void SetDefaultValue()
+        private static string MapNameError(NameError error)
+        {
+            if (error is NameError.EmptyName)
+                return ErrorsMessages.EmptyNameError;
+
+            if (error is NameError.TooLongName)
+                return ErrorsMessages.TooLongNameError;
+
+            return ErrorsMessages.UnknownError;
+        }
+
+        private void SetDefaultValues()
         {
             Name.Value = "Jean Bartishe";
             Player.Value = "Léo";
@@ -71,17 +75,6 @@ namespace CharacterSheetHandler.ViewModels.Vampire
             Clan.Value = string.Empty;
             Generation.Value = string.Empty;
             Sire.Value = string.Empty;
-        }
-
-        private static string MapNameError(NameError error)
-        {
-            if (error is NameError.EmptyName)
-                return "Name shouldn't be empty.";
-
-            if (error is NameError.TooLongName)
-                return $"Name shouldn't exceed {Constants.NameLength} characters";
-
-            return "Unknown error while setting the name.";
         }
     }
 }

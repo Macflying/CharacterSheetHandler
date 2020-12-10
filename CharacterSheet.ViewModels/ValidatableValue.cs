@@ -126,7 +126,7 @@ namespace CharacterSheetHandler.ViewModels
             #region Comparaison sur Value
 
             if (other == null) return false;
-            if (!other.Value.Equals(Value)) return false;
+            if (!(other?.Value?.Equals(Value)).GetValueOrDefault()) return false;
 
             #endregion Comparaison sur Value
 
@@ -148,7 +148,7 @@ namespace CharacterSheetHandler.ViewModels
             foreach (var item in ValidationRules)
                 hash *= item.GetHashCode();
 
-            return Value.GetHashCode() ^ hash;
+            return (Value?.GetHashCode()).GetValueOrDefault() ^ hash;
         }
         #endregion Equality
 

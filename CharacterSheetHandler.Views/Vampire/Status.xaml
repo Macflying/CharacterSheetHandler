@@ -8,6 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <Style TargetType="Line" BasedOn="{StaticResource BlankLine}" />
+        <Style TargetType="TextBox" BasedOn="{StaticResource OneLineEntry}" />
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -24,20 +25,25 @@
             <TextBlock Style="{StaticResource Title}" />
         </Border>
 
+        <!--Notes-->
         <RichTextBox Grid.Row="1"
                      Background="LightGray"
                      Margin="10" />
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <local:PathGauge />
+        <!--Path-->
+            <local:PathGauge DataContext="{Binding Path}"/>
             <Line />
+            <!--Willpower-->
             <local:WillpowerGauge />
             <Line />
+            <!--Blood points-->
             <local:BloodPoolGauge />
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2"
                     Margin="10,0">
+            <!--Health-->
             <TextBlock Style="{StaticResource SubTitle}"
                        Text="Health" />
             <local:BruiseCounter Header="Bruised" />
@@ -47,20 +53,16 @@
             <local:BruiseCounter Header="Mauled" Malus="-2" />
             <local:BruiseCounter Header="Crippled" Malus="-5" />
             <local:BruiseCounter Header="Incapacitated" />
+
+            <!--Weakness-->
             <TextBlock Style="{StaticResource SubTitle}"
                        Text="Weakness" />
-            <TextBox HorizontalAlignment="Stretch"
-                         Height="45"
-                         FontSize="16"
-                         TextWrapping="Wrap"
-                         Background="Transparent" />
+            <TextBox DataContext="{Binding Weakness}" />
+
+            <!--Experience-->
             <TextBlock Style="{StaticResource SubTitle}"
                        Text="Experience" />
-            <TextBox HorizontalAlignment="Stretch"
-                         Height="45"
-                         FontSize="16"
-                         TextWrapping="Wrap"
-                         Background="Transparent" />
+            <TextBox DataContext="{Binding Experience}"  />
         </StackPanel>
     </Grid>
 </UserControl>

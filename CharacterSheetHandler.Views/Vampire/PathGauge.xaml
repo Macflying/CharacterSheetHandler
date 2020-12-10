@@ -20,7 +20,8 @@
         <Grid HorizontalAlignment="Stretch"
               Margin="75,0">
             <TextBox HorizontalAlignment="Stretch"
-                     Name="Bearing" />
+                     Name="Bearing"
+                     DataContext="{Binding Bearing}"/>
             <TextBlock Style="{StaticResource PlaceHolderTextBlock}"
                        Visibility="{Binding ElementName=Bearing, Path=Text, Converter={x:Static converter:TextEmptyToVisibilityConverter.NullOrEmptyToVisible}}"
                        Text="Bearing">

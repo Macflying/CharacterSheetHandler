@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Vampire\Attributes.xaml~RF2bc3fdec.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CharacterSheet.ViewModels\CharacterSheetHandler.ViewModels.csproj" />
   </ItemGroup>
 
