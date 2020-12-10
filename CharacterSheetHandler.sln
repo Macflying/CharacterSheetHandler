@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.DTOs"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterSheetHandler.Views", "CharacterSheetHandler.Views\CharacterSheetHandler.Views.csproj", "{2BB20E38-A3B1-4157-8B23-83841BB1AB77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalCSharp.Tests", "FunctionalCSharp.Tests\FunctionalCSharp.Tests.csproj", "{078BCBA9-48D8-4D3E-BF5C-C1C5FCA85410}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionalCSharp.Tests", "FunctionalCSharp.Tests\FunctionalCSharp.Tests.csproj", "{078BCBA9-48D8-4D3E-BF5C-C1C5FCA85410}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalCSharp", "FunctionalCSharp\FunctionalCSharp.csproj", "{6D66AE20-13D2-4F15-9B6B-8DEE3A63B0A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionalCSharp", "FunctionalCSharp\FunctionalCSharp.csproj", "{6D66AE20-13D2-4F15-9B6B-8DEE3A63B0A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterSheetHandler.Services", "CharacterSheetHandler.Services\CharacterSheetHandler.Services.csproj", "{4999D839-79EB-4EB5-BA67-6995F5209888}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{6D66AE20-13D2-4F15-9B6B-8DEE3A63B0A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D66AE20-13D2-4F15-9B6B-8DEE3A63B0A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D66AE20-13D2-4F15-9B6B-8DEE3A63B0A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4999D839-79EB-4EB5-BA67-6995F5209888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4999D839-79EB-4EB5-BA67-6995F5209888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4999D839-79EB-4EB5-BA67-6995F5209888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4999D839-79EB-4EB5-BA67-6995F5209888}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
