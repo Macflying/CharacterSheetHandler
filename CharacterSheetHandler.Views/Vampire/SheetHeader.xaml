@@ -6,15 +6,13 @@
              xmlns:local="clr-namespace:CharacterSheetHandler.Views.Vampire"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <Style TargetType="TextBlock" BasedOn="{StaticResource EntryHeaderTextBlock}"/>
-        <Style TargetType="TextBox" BasedOn="{StaticResource OneLineEntry}"/>
-    </UserControl.Resources>
     <Grid>
         <Grid.Resources>
             <Style TargetType="RowDefinition">
-                <Setter Property="Height" Value="30" />
+                <Setter Property="Height" Value="90" />
             </Style>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource EntryHeaderTextBlock}" />
+            <Style TargetType="TextBox" BasedOn="{StaticResource OneLineEntry}" />
         </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -23,51 +21,75 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
         </Grid.RowDefinitions>
+        <DockPanel Grid.Column="0">
+            <!--Name-->
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="Name:" />
+                <TextBox DataContext="{Binding Name}" />
+            </DockPanel>
 
-        <DockPanel Grid.Column="0" Grid.Row="0">
-            <TextBlock Text="Name"
-                       DockPanel.Dock="Left"/>
-            <TextBox DataContext="{Binding Name}"/>
+            <!--Player-->
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="Player:" />
+                <TextBox DataContext="{Binding Player}" />
+            </DockPanel>
+
+            <!--Chronicle-->
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="Chronicle:" />
+                <TextBox DataContext="{Binding Chronicle}" />
+            </DockPanel>
         </DockPanel>
-        
-        <!--<local:FieldEntryWithHeader Grid.Column="0" Grid.Row="0"
-                                    Header="Name:"
-                                    Text="{Binding Name.Value, Mode=TwoWay}"/>-->
 
-        <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="1"
-                                    Header="Player:"
-                                    Text="{Binding Player.Value, Mode=TwoWay}"/>
+        <DockPanel Grid.Column="1">
+            <!--Nature-->
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="Nature:" />
+                <TextBox DataContext="{Binding Nature}" />
+            </DockPanel>
 
-        <local:FieldEntryWithHeader Grid.Column="0" Grid.Row="2"
-                                    Header="Chronicle:"
-                                    Text="{Binding Chronicle.Value, Mode=TwoWay}"/>
+            <!--Demeanor-->
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="Demeanor:" />
+                <TextBox DataContext="{Binding Demeanor}" />
+            </DockPanel>
 
-        <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="0"
-                                    Header="Nature:"
-                                    Text="{Binding Nature.Value, Mode=TwoWay}"/>
+            <!--Concept-->
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="Concept:" />
+                <TextBox DataContext="{Binding Concept}" />
+            </DockPanel>
+        </DockPanel>
 
-        <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="1"
-                                    Header="Demeanor:"
-                                    Text="{Binding Demeanor.Value, Mode=TwoWay}"/>
+        <DockPanel Grid.Column="2">
+            <!--Clan-->
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="Clan:" />
+                <TextBox DataContext="{Binding Clan}" />
+            </DockPanel>
 
-        <local:FieldEntryWithHeader Grid.Column="1" Grid.Row="2"
-                                    Header="Concept:"
-                                    Text="{Binding Concept.Value, Mode=TwoWay}"/>
+            <!--Generation-->
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="Generation:" />
+                <TextBox DataContext="{Binding Generation}" />
+            </DockPanel>
 
-        <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="0"
-                                    Header="Clan:"
-                                    Text="{Binding Clan.Value, Mode=TwoWay}"/>
-
-        <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="1"
-                                    Header="Generation:"
-                                    Text="{Binding Generation.Value, Mode=TwoWay}"/>
-
-        <local:FieldEntryWithHeader Grid.Column="2" Grid.Row="2"
-                                    Header="Sire:"
-                                    Text="{Binding Sire.Value, Mode=TwoWay}"/>
+            <!--Sire-->
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="Sire:" />
+                <TextBox DataContext="{Binding Sire}" />
+            </DockPanel>
+        </DockPanel>
     </Grid>
 
 </UserControl>

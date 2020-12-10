@@ -13,6 +13,6 @@
     <DockPanel>
         <TextBlock DockPanel.Dock="Left"
                    Text="{Binding ElementName=FieldEntryWithHeaderName, Path=Header}" />
-        <TextBox Text="{Binding ElementName=FieldEntryWithHeaderName, Path=Text}" />
+        <TextBox DataContext="{Binding}" />
     </DockPanel>
 </UserControl>

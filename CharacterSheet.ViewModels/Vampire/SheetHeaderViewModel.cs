@@ -79,7 +79,7 @@ namespace CharacterSheetHandler.ViewModels.Vampire
                 return "Name shouldn't be empty.";
 
             if (error is NameError.TooLongName)
-                return $"Name shouldn't exceed {Constants.NameLength}";
+                return $"Name shouldn't exceed {Constants.NameLength} characters";
 
             return "Unknown error while setting the name.";
         }

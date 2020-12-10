@@ -6,7 +6,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace CharacterSheetHandler.ViewModels
@@ -15,7 +14,7 @@ namespace CharacterSheetHandler.ViewModels
     /// Class that can notify a view of changes to a value and errors linked to that value.
     /// </summary>
     /// <typeparam name="T">Le type de l'objet pouvant être validé.</typeparam>
-    public class ValidatableValue<T> : INotifyDataErrorInfo, IEquatable<ValidatableValue<T>>
+    public class ValidatableValue<T> : IEquatable<ValidatableValue<T>>, INotifyDataErrorInfo
     {
         private readonly ViewModelBase _viewModel = new ViewModelBase();
 
@@ -44,7 +43,11 @@ namespace CharacterSheetHandler.ViewModels
         #region Errors
         private List<string> _errors = new List<string>();
 
+        public IEnumerable<string> Errors => _errors;
+
         public bool HasErrors => _errors.Any();
+
+        public string FirstError => _errors.FirstOrDefault();
 
         public IEnumerable GetErrors(string propertyName) => _errors;
 
@@ -91,12 +94,13 @@ namespace CharacterSheetHandler.ViewModels
                 .SelectOptional(v => v.Validate(Value)));
 
             ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(Value)));
+            _viewModel.RaisePropertyChanged(nameof(HasErrors));
+            _viewModel.RaisePropertyChanged(nameof(FirstError));
 
             return !HasErrors;
         }
 
         #region Equality
-
         public static bool operator !=(ValidatableValue<T> vo1, ValidatableValue<T> vo2)
         {
             return !(vo1 == vo2);
