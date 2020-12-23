@@ -3,6 +3,7 @@ using CharacterSheetHandler.Models.Vampire;
 
 using FsCheck;
 using FsCheck.Xunit;
+
 using FunctionalCSharp.Result;
 
 using Xunit;
@@ -11,7 +12,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
 {
     public class PhysicalTests
     {
-        [Property(Arbitrary = new[] { typeof(LevelArbitrary)})]
+        [Property(Arbitrary = new[] { typeof(LevelArbitrary) })]
         public Property CanCreate_Physical_From_Levels(Level strength, Level dexterity, Level stamina)
         {
             var physicalResult = Physical.New(strength, dexterity, stamina);
@@ -31,7 +32,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
             Assert.IsAssignableFrom<Error<Physical, PhysicalError>>(physicalResult);
 
             return (physicalResult is Error<Physical, PhysicalError> error
-                && (PhysicalError)error is PhysicalError.NoStrengthError)
+                && (PhysicalError)error is NoStrengthError)
                 .ToProperty();
         }
 
@@ -43,7 +44,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
             Assert.IsAssignableFrom<Error<Physical, PhysicalError>>(physicalResult);
 
             return (physicalResult is Error<Physical, PhysicalError> error
-                && (PhysicalError)error is PhysicalError.NoDexterityError)
+                && (PhysicalError)error is NoDexterityError)
                 .ToProperty();
         }
 
@@ -55,7 +56,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
             Assert.IsAssignableFrom<Error<Physical, PhysicalError>>(physicalResult);
 
             return (physicalResult is Error<Physical, PhysicalError> error
-                && (PhysicalError)error is PhysicalError.NoStaminaError)
+                && (PhysicalError)error is NoStaminaError)
                 .ToProperty();
         }
     }

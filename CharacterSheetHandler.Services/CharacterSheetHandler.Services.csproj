@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CharacterSheetHandler.DTOs\CharacterSheetHandler.DTOs.csproj" />
+    <ProjectReference Include="..\CharacterSheetHandler.Models\CharacterSheetHandler.Models.csproj" />
   </ItemGroup>
 
 </Project>

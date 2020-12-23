@@ -4,8 +4,8 @@ namespace CharacterSheetHandler.Models.Vampire
 {
     public class Abilities
     {
-        public IEnumerable<Skill> Talents { get; }
-        public IEnumerable<Skill> Skills { get;  }
-        public IEnumerable<Skill> Knowledges { get; }
+        public IReadOnlyList<Skill> Talents { get; }
+        public IReadOnlyList<Skill> Skills { get; }
+        public IReadOnlyList<Skill> Knowledges { get; }
     }
 }

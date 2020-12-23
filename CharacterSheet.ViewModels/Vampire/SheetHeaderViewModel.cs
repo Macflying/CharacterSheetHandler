@@ -53,10 +53,10 @@ namespace CharacterSheetHandler.ViewModels.Vampire
 
         private static string MapNameError(NameError error)
         {
-            if (error is NameError.EmptyName)
+            if (error is EmptyName)
                 return ErrorsMessages.EmptyNameError;
 
-            if (error is NameError.TooLongName)
+            if (error is TooLongName)
                 return ErrorsMessages.TooLongNameError;
 
             return ErrorsMessages.UnknownError;

@@ -3,13 +3,14 @@ using CharacterSheetHandler.Models.Vampire;
 
 using FsCheck;
 using FsCheck.Xunit;
+
 using FunctionalCSharp.Result;
 
 namespace CharacterSheetHandler.Models.Tests.Vampire
 {
     public class SkillTests
     {
-        [Property(Arbitrary = new[] { typeof(NameArbitrary), typeof(LevelArbitrary) } )]
+        [Property(Arbitrary = new[] { typeof(NameArbitrary), typeof(LevelArbitrary) })]
         public Property CanCreate_Skill_From_LevelAndName(Name name, Level level)
         {
             var skill = Skill.New(name, level);
@@ -20,13 +21,13 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
                 .ToProperty();
         }
 
-        [Property(Arbitrary = new [] { typeof(LevelArbitrary)})]
+        [Property(Arbitrary = new[] { typeof(LevelArbitrary) })]
         public Property NullName_To_EmptyNameError(Level level)
         {
             var skill = Skill.New(null, level);
 
             return (skill is Error<Skill, SkillError> error
-                && (SkillError)error is SkillError.EmptyNameError)
+                && (SkillError)error is EmptyNameError)
                 .ToProperty();
         }
 
@@ -36,7 +37,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
             var skill = Skill.New(name, null);
 
             return (skill is Error<Skill, SkillError> error
-                && (SkillError)error is SkillError.NoLevelError)
+                && (SkillError)error is NoLevelError)
                 .ToProperty();
         }
     }

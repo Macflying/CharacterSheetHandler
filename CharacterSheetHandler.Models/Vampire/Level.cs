@@ -6,8 +6,8 @@ using FunctionalCSharp.Result;
 
 namespace CharacterSheetHandler.Models.Vampire
 {
-    [DebuggerDisplay("Level: {Value}/{Max}")]
-    public class Level : IEquatable<Level>
+    [DebuggerDisplay("{ToString()}")]
+    public class Level : ValueObject<Level>
     {
         public int Max { get; }
         public int Value { get; }
@@ -32,27 +32,14 @@ namespace CharacterSheetHandler.Models.Vampire
             return Ok<Level, LevelError>.Value(new Level(max, value));
         }
 
-        public override bool Equals(object obj) =>
-            Equals(obj as Level);
-
-        public bool Equals(Level other)
-        {
-            return other != null &&
-                   Max == other.Max &&
-                   Value == other.Value;
-        }
-
-        public override int GetHashCode() =>
-            HashCode.Combine(Max, Value);
-
         public override string ToString() =>
             $"{Value}/{Max}";
 
-        public static bool operator ==(Level left, Level right) =>
-            EqualityComparer<Level>.Default.Equals(left, right);
-
-        public static bool operator !=(Level left, Level right) =>
-            !(left == right);
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Max;
+            yield return Value;
+        }
     }
 
     public abstract class LevelError
@@ -62,16 +49,19 @@ namespace CharacterSheetHandler.Models.Vampire
 
         public static NegativeOrZeroMaxLevelError NegativeOrZeroMaxLevel =>
             new NegativeOrZeroMaxLevelError();
+
         public class NegativeOrZeroMaxLevelError : LevelError
         { }
 
         public static NegativeOrZeroLevelError NegativeOrZeroLevel =>
             new NegativeOrZeroLevelError();
+
         public class NegativeOrZeroLevelError : LevelError
         { }
 
         public static LevelSupperiorToMaxError LevelSupperiorToMax =>
             new LevelSupperiorToMaxError();
+
         public class LevelSupperiorToMaxError : LevelError
         { }
     }

@@ -2,6 +2,7 @@
 
 using FsCheck;
 using FsCheck.Xunit;
+
 using FunctionalCSharp.Result;
 
 using Xunit;
@@ -17,7 +18,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
 
             Assert.IsType<Error<Name, NameError>>(result);
             _ = result is Error<Name, NameError> er
-                ? (NameError.EmptyName)er
+                ? (EmptyName)er
                 : throw new TestFailedException("Should be NameError.EmptyName");
         }
 
@@ -28,7 +29,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
 
             Assert.IsType<Error<Name, NameError>>(result);
             _ = result is Error<Name, NameError> er
-                ? (NameError.EmptyName)er
+                ? (EmptyName)er
                 : throw new TestFailedException("Should be NameError.EmptyName");
         }
 
@@ -39,7 +40,7 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
 
             Assert.IsType<Error<Name, NameError>>(result);
             _ = result is Error<Name, NameError> er
-                ? (NameError.EmptyName)er
+                ? (EmptyName)er
                 : throw new TestFailedException("Should be NameError.EmptyName");
         }
 
@@ -50,11 +51,11 @@ namespace CharacterSheetHandler.Models.Tests.Vampire
 
             Assert.IsType<Error<Name, NameError>>(result);
             _ = result is Error<Name, NameError> er
-                ? (NameError.TooLongName)er
+                ? (TooLongName)er
                 : throw new TestFailedException("Should be NameError.TooLongName");
         }
 
-        [Property(Arbitrary = new[] { typeof(StringArbitrary)})]
+        [Property(Arbitrary = new[] { typeof(StringArbitrary) })]
         public Property GoodString_Gives_NameWithValue(NonNullOrWhiteSpacesStringMaxWithMaxLength value)
         {
             var result = Name.New(value.Get);
