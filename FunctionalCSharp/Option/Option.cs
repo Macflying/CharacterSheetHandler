@@ -8,7 +8,7 @@ namespace FunctionalCSharp.Option
     /// <typeparam name="T">The type of the value if it exists.</typeparam>
     public abstract class Option<T>
     {
-        internal Option()
+        protected Option()
         { }
 
         /// <summary>
@@ -18,6 +18,8 @@ namespace FunctionalCSharp.Option
         /// <param name="map">The operation to map the value from <typeparamref name="T"/> to <typeparamref name="TResult"/>.</param>
         /// <exception cref="ArgumentNullException"/>
         public abstract Option<TResult> Map<TResult>(Func<T, TResult> map);
+
+        public abstract Option<T> When(Predicate<T> predicate);
 
         /// <summary>
         /// Execute an operation on wrapped value if <see cref="Option{T}"/> is <see cref="Some{T}"/>. Do nothing otherwise.
@@ -45,6 +47,7 @@ namespace FunctionalCSharp.Option
         }
 
 #pragma warning disable IDE0060 // Remove unused parameter -> This is synctactic sugar to avoid specifying type when creating None where type should be obvious.
+
         public static implicit operator Option<T>(None none)
 #pragma warning restore IDE0060 // Remove unused parameter
         {

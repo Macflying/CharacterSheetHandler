@@ -53,6 +53,16 @@ namespace FunctionalCSharp.Option
             return _content;
         }
 
+        public override Option<T> When(Predicate<T> predicate)
+        {
+            if (predicate is null)
+                throw new ArgumentNullException(nameof(predicate));
+
+            if (predicate(_content))
+                return this;
+            return None.Value;
+        }
+
         public static implicit operator T(Some<T> value) =>
             value._content;
     }

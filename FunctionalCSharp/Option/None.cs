@@ -9,6 +9,9 @@ namespace FunctionalCSharp.Option
     /// <typeparam name="T"></typeparam>
     public class None<T> : Option<T>
     {
+        internal None()
+        { }
+
         public override Option<TResult> Map<TResult>(Func<T, TResult> map)
         {
             if (map is null)
@@ -32,6 +35,14 @@ namespace FunctionalCSharp.Option
 
             return whenNone();
         }
+
+        public override Option<T> When(Predicate<T> predicate)
+        {
+            if (predicate is null)
+                throw new ArgumentNullException(nameof(predicate));
+
+            return this;
+        }
     }
 
     /// <summary>
@@ -43,6 +54,9 @@ namespace FunctionalCSharp.Option
         /// None value that can implicitly be converted to <see cref="None{T}"/>.
         /// </summary>
         public static None Value { get; } = new None();
-        private None() { }
+
+        private None()
+        {
+        }
     }
 }
